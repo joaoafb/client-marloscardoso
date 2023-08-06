@@ -12,7 +12,7 @@ function products() {
 
 
 
-    fetch('https://api.marloscardoso.com/api/marloscardoso/listprodutos')
+    fetch('https://54.224.17.32/api/marloscardoso/listprodutos')
         .then(response => response.json())
         .then(data => {
 

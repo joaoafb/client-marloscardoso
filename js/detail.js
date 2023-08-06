@@ -3,7 +3,7 @@ function loadpage() {
 
     const hash = window.location.hash.substring(1);
     const decodedHash = decodeURIComponent(hash);
-    fetch('https://api.marloscardoso.com/api/marloscardoso/listprodutos')
+    fetch('https://54.224.17.32/api/marloscardoso/listprodutos')
         .then(response => response.json())
         .then(data => {
             data.forEach(item => {

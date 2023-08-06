@@ -15,7 +15,7 @@
           document.querySelector("#btnsair").style.display = 'none'
       }
   })
-  fetch('https://api.marloscardoso.com/api/marloscardoso/listcategorias')
+  fetch('https://54.224.17.32/api/marloscardoso/listcategorias')
       .then(response => response.json())
       .then(data => {
 
@@ -40,7 +40,7 @@
 
 
 
-  fetch('https://api.marloscardoso.com/api/marloscardoso/listprodutos')
+  fetch('https://54.224.17.32/api/marloscardoso/listprodutos')
       .then(response => response.json())
       .then(data => {
 

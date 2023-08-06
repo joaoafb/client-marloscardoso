@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    fetch(`https://api.marloscardoso.com/api/marloscardoso/listapedidosuser?cpf=${localStorage.getItem("usercpf")}`)
+    fetch(`https://54.224.17.32/api/marloscardoso/listapedidosuser?cpf=${localStorage.getItem("usercpf")}`)
         .then(response => response.json())
         .then(data => {
 
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
                                     try {
-                                        const response = await fetch(`https://api.marloscardoso.com/api/pagamento-combinar/${pedidoId}`, {
+                                        const response = await fetch(`https://54.224.17.32/api/pagamento-combinar/${pedidoId}`, {
                                             method: 'PUT',
                                         });
 
