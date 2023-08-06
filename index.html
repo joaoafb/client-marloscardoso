@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marlos Cardoso - Moda Masculina Premium</title>
+    <meta name="description" content="Loja de moda masculina premium com uma ampla seleção de trajes, sapatos, calças, camisas e gravatas. Encontre produtos de luxo e algumas marcas próprias exclusivas.">
+    <meta name="keywords" content="Marlos Cardoso, moda masculina, roupas masculinas, moda premium, trajes, sapatos masculinos, calças, camisas, gravatas">
+    <meta name="author" content="Marlos Cardoso">
+    <link rel="canonical" href="http://www.marloscardoso.com/">
+    <meta property="og:title" content="Marlos Cardoso - Moda Masculina Premium">
+    <meta property="og:description" content="Loja de moda masculina premium com uma ampla seleção de trajes, sapatos, calças, camisas e gravatas. Encontre produtos de luxo e algumas marcas próprias exclusivas.">
+    <meta property="og:image" content="https://192.168.1.105/img/logopng.png">
+    <meta property="og:url" content="http://www.marloscardoso.com/">
+    <meta property="og:type" content="website">
+
+
+
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap">
+    <!-- theme stylesheet-->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.29.1/moment.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/logo.ico">
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <script src="https://cdn.socket.io/4.2.0/socket.io.min.js"></script>
+
+
+
+</head>
+
+<body>
+    <div id="preloader">
+        <img src="./img/logopng.png" class="img-loading" alt="">
+    </div>
+    <div class="page-holder">
+        <!-- navbar-->
+        <header class="header bg-white">
+            <div class="container px-lg-3">
+                <nav class="navbar navbar-expand-lg navbar-light py-3 px-lg-0">
+                    <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto">
+
+                            <li class="nav-item">
+                                <span class="fw-bold text-uppercase text-dark" style="font-size: 16pt;">Marlos Cardoso</span>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a href="https://wa.me/5574988274544" target="_blank" class="nav-link"><i class="lni lni-whatsapp"></i>(74) 98827-4544</a>
+                            </li>
+
+
+
+                        </ul>
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <!-- Link--><a class="nav-link active" href="./index.html"><i class="fas fa-home me-1 text-gray"></i>Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <!-- Link--><a class="nav-link" href="/shop.html"><i class="fas fa-store me-1 text-gray"></i>Catálogo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./pedidos.html"> <i class="fas fa-list me-1 text-gray"></i>Pedidos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./cart.html"> <i class="fas fa-dolly-flatbed me-1 text-gray"></i>Carrinho</a>
+                            </li>
+
+                            <li class="nav-item" id="btnlogin">
+                                <a class="nav-link" href="./login.html"> <i class="fas fa-user me-1 text-gray fw-normal"></i>Entrar</a>
+                            </li>
+                            <li class="nav-item" id="btnsair" onclick="deslogar()">
+                                <a class="nav-link" href="#deslogando"> <i class="fas fa-power-off text-gray"></i>Deslogar</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!--  Modal -->
+        <div class="modal fade" id="productView" tabindex="-1">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content overflow-hidden border-0">
+                    <button class="btn-close p-4 position-absolute top-0 end-0 z-index-20 shadow-0" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-body p-0">
+                        <div class="row align-items-stretch">
+                            <div class="col-lg-6 p-lg-0">
+                                <a class="glightbox product-view d-block h-100 bg-cover bg-center" id="product-image" data-gallery="gallery1" data-glightbox="Gravata 1"></a>
+
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="p-4 my-md-4">
+                                    <ul class="list-inline mb-2">
+                                        <li class="list-inline-item m-0"><i class="fas fa-star small text-warning"></i></li>
+                                        <li class="list-inline-item m-0 1"><i class="fas fa-star small text-warning"></i></li>
+                                        <li class="list-inline-item m-0 2"><i class="fas fa-star small text-warning"></i></li>
+                                        <li class="list-inline-item m-0 3"><i class="fas fa-star small text-warning"></i></li>
+                                        <li class="list-inline-item m-0 4"><i class="fas fa-star small text-warning"></i></li>
+                                    </ul>
+                                    <h2 class="h4" id="product-title"></h2>
+                                    <p class="text-muted" id="product-price"></p>
+                                    <p class="text-sm mb-4" id="product-description"> </p>
+                                    <div class="row align-items-stretch mb-4 gx-0">
+
+                                        <div class="col-sm-5" id="btn-addcart" style="width: 100%;"><button style="width: 100%;" class="btn btn-dark btn-sm w-100 h-100 d-flex align-items-center justify-content-center px-0" href="./cart.html">Adicionar no carrinho</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- HERO SECTION-->
+        <div class="container">
+            <section data-aos="fade-down" class="hero pb-3 bg-cover bg-center d-flex align-items-center" id="banner" style="flex-wrap: wrap;border-radius: 30px;background: url(img/hero-banner-alt.png)">
+                <script>
+                    const backgroundImages = [
+                        '../img/hero-banner-alt.png',
+                        '../img/hero-banner-alt2.png'
+                    ];
+
+                    // Variável para rastrear o índice atual da imagem de fundo
+                    let currentImageIndex = 0;
+
+                    // Função para alternar a imagem de fundo
+                    function changeBackgroundImage() {
+                        const bannerElement = document.getElementById('banner');
+                        bannerElement.style.backgroundImage = `url('${backgroundImages[currentImageIndex]}')`;
+
+                        // Atualiza o índice para a próxima imagem de fundo
+                        currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
+                    }
+
+                    // Define o intervalo para trocar a imagem de fundo a cada 2 segundos
+                    setInterval(changeBackgroundImage, 8000);
+                </script>
+                <img src="./img/logopng.png" width="100px" id="logoempresa" alt="" srcset="">
+                <div class="container py-5">
+
+                    <div class="row px-4 px-lg-5">
+
+                        <div class="col-lg-6">
+                            <p class="text-muted small text-uppercase mb-2">"Estilo masculino elevado à máxima elegância."</p>
+                            <h1 class="h2 text-uppercase mb-3"><img src="./img/logopng.png" width="30px" style="margin-top: -10px;" alt=""> Marlos Cardoso</h1><a class="btn btn-dark" href="./shop.html">Ver Produtos</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- CATEGORIES SECTION-->
+            <section class="pt-5 " i data-aos="zoom-in-down">
+                <header class="text-center">
+                    <p class="small text-muted small text-uppercase mb-1">Refine seu visual com nossos ternos exclusivos.</p>
+                    <h2 class="h5 text-uppercase mb-4">Categorias</h2>
+                </header>
+                <div class="row" id="lista-categ">
+
+
+
+                </div>
+            </section>
+            <!-- TRENDING PRODUCTS-->
+            <section class="py-5">
+                <header class="flex w-100 bg-gray-100 p-4 mb-5" style="border-radius: 15px;display: flex;align-items: center;">
+
+                    <h2 class="h5 text-uppercase " style="font-size: 20pt;">Nossos Produtos</h2>
+
+                </header><br><br>
+
+                <div class="row" data-aos="zoom-in-down" id="list-products">
+
+
+
+                </div>
+            </section>
+
+            <!--CLIENTES-->
+            <section class="py-5" style="display: none;">
+                <header class="flex w-100 bg-gray-100 p-4 mb-5" style="border-radius: 15px;display: flex;align-items: center;">
+
+                    <h2 class="h5 text-uppercase " style="font-size: 20pt;">Feedback</h2><br>
+                    <p class="small text-muted small text-uppercase mb-1" style="padding-left: 20px;">O Que Nossos Clientes Dizem</p>
+
+                </header><br><br>
+
+                <div class="row" style="padding: 10px;" data-aos="zoom-in-down" id="lista-clientes">
+                    <h4 class=" h6 text-uppercase " style="font-size: 10pt;">(Em breve...)</h4>
+
+
+                </div>
+            </section>
+
+        </div>
+        <footer class="bg-dark text-white">
+            <div class="container py-4">
+                <div class="row py-5">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <h6 class="text-uppercase mb-3">Atendimento ao cliente</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li><a class="footer-link" target="_blank" href="https://wa.me/5574988274544?text=Preciso de sua ajuda, Marlos Cardoso">Ajuda</a></li>
+
+
+                            <li><a class="footer-link" href="./terms.html">Termos &amp; Condições</a></li>
+                            <li><a class="footer-link" href="#">Email para suporte:<br> suporte@marloscardoso.com <br>Email para reportar bugs: <br> marloscardoso@geniusleap.tech</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h6 class="text-uppercase mb-3">Redes Sociais</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li><a class="footer-link" target="_blank" href="https://www.instagram.com/marloscard/">Instagram</a></li>
+
+                            <li><a class="footer-link" target="_blank" href="https://wa.me/5574988274544">Whatsapp</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-top pt-4" style="border-color: #1d1d1d !important">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start">
+                            <p class="small text-muted mb-0">&copy; 2023 Todos os direitos reservados.</p>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <p class="small text-muted mb-0">Sistema Completo Criador por <a class="text-white reset-anchor" target="_blank" href="http://geniusleap.tech">Genius Leap</a></p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- JavaScript files-->
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+        <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    </div>
+    <script src="./app.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        $("#preloader").animate({
+            'opacity': '0'
+        }, 1000, function() {
+            setTimeout(function() {
+                $("#preloader").css("visibility", "hidden").fadeOut();
+            }, 500);
+        });
+    </script>
+</body>
+
+</html>

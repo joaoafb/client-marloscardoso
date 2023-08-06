@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Marlos Cardoso - Moda Masculina Premium</title>
+    <meta name="description" content="Loja de moda masculina premium com uma ampla seleção de trajes, sapatos, calças, camisas e gravatas. Encontre produtos de luxo e algumas marcas próprias exclusivas.">
+    <meta name="keywords" content="Marlos Cardoso, moda masculina, roupas masculinas, moda premium, trajes, sapatos masculinos, calças, camisas, gravatas">
+    <meta name="author" content="Marlos Cardoso">
+    <link rel="canonical" href="http://www.marloscardoso.com/">
+    <meta property="og:title" content="Marlos Cardoso - Moda Masculina Premium">
+    <meta property="og:description" content="Loja de moda masculina premium com uma ampla seleção de trajes, sapatos, calças, camisas e gravatas. Encontre produtos de luxo e algumas marcas próprias exclusivas.">
+    <meta property="og:image" content="https://192.168.1.105/img/logopng.png">
+    <meta property="og:url" content="http://www.marloscardoso.com/">
+    <meta property="og:type" content="website">
+
+    <!-- Google fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/logo.ico">
+
+</head>
+
+<body>
+    <div class="page-holder">
+        <!-- navbar-->
+        <header class="header bg-white">
+            <div class="container px-lg-3">
+                <nav class="navbar navbar-expand-lg navbar-light py-3 px-lg-0"><a class="navbar-brand" href="./index.html"><span class="fw-bold text-uppercase text-dark">Marlos Cardoso</span></a>
+                    <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+                </nav>
+            </div>
+        </header>
+
+        <div class="container">
+            <!-- HERO SECTION-->
+            <section class="py-5 bg-light">
+                <div class="container">
+                    <div class="row px-4 px-lg-5 py-lg-4 align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="h2 text-uppercase mb-0">Checkout</h1>
+                        </div>
+                        <div class="col-lg-6 text-lg-end">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-lg-end mb-0 px-0 bg-light">
+                                    <li class="breadcrumb-item"><a class="text-dark" href="./index.html">Home</a></li>
+                                    <li class="breadcrumb-item"><a class="text-dark" href="./cart.html">Carrinho</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="py-5">
+                <!-- BILLING ADDRESS-->
+                <h2 class="h5 text-uppercase mb-4">PREENCHA OS DADOS ABAIXO:</h2>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <form action="#" id="form">
+                            <div class="row gy-3">
+                                <div class="col-lg-6">
+                                    <label class="form-label text-sm text-uppercase" for="firstName">Primeiro Nome </label>
+                                    <input required class="form-control form-control-lg" type="text" id="firstName" placeholder="Digite seu primeiro nome">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="form-label text-sm text-uppercase" for="lastName">Ultimo Nome </label>
+                                    <input required class="form-control form-control-lg" type="text" id="lastName" placeholder="Digite seu ultimo nome">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="form-label text-sm text-uppercase" for="lastName">CPF</label>
+                                    <input required class="form-control form-control-lg" type="text" id="cpf" placeholder="123.456.789-10">
+                                    <p style="padding-left: 6px;color: gray;font-size: 10pt;">Não se preucupe, todos os dados são criptografados.</p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="form-label text-sm text-uppercase" for="email">Email </label>
+                                    <input required class="form-control form-control-lg" type="email" id="email" placeholder="Ex. loja@marloscardoso.com">
+                                </div>
+                                <div class="col-lg-12">
+                                    <label class="form-label text-sm text-uppercase" for="email">Observação: </label>
+                                    <textarea cols="50p" class="form-control form-control-lg" type="text" id="obs" placeholder="Deseja acrescentar alguma informação ao seu pedido?"></textarea>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="form-label text-sm text-uppercase" for="phone">Telefone</label>
+                                    <input required class="form-control form-control-lg" type="tel" id="phone" placeholder="Ex. 7499137-9747">
+                                </div>
+
+
+                                <div class="col-lg-12">
+                                    <label class="form-label text-sm text-uppercase" for="address">Endereço (Rua e número) </label>
+                                    <input required class="form-control form-control-lg" type="text" id="address" placeholder="Digite o nome de sua rua e número da casa.">
+                                    <p style="color: gray;font-size: 10pt;" id="rua"></p>
+                                </div>
+                                <div class="col-lg-12">
+                                    <label class="form-label text-sm text-uppercase" for="addressalt">Bairro </label>
+                                    <input required class="form-control form-control-lg" type="text" id="addressalt" placeholder="Digite o nome do bairro">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="form-label text-sm text-uppercase" for="city">Cidade </label>
+                                    <input required class="form-control form-control-lg" type="text" id="city">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="form-label text-sm text-uppercase" for="state">Estado</label>
+                                    <input required class="form-control form-control-lg" type="text" id="state">
+                                </div>
+                                <div class="col-lg-6">
+                                    <button class="btn btn-link text-dark p-0 shadow-0" type="button" data-bs-toggle="collapse" data-bs-target="#alternateAddress">
+                     
+                    </button>
+                                </div>
+
+                                <div class="col-lg-12 form-group">
+                                    <button class="btn btn-dark" id="btnComprar" type="submit">Fazer Compra</button>
+
+
+                                    <button class="btn btn-dark" type="button" id="btnVoltar" onclick="history.back()">Voltar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- ORDER SUMMARY-->
+                    <div class="col-lg-4">
+                        <div class="card border-0 rounded-0 p-lg-4 bg-light">
+                            <div class="card-body">
+                                <h5 class="text-uppercase mb-4">Sua Compra</h5>
+                                <ul class="list-unstyled mb-0" id="order">
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="bg-dark text-white">
+            <div class="container py-4">
+                <div class="row py-5">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <h6 class="text-uppercase mb-3">Atendimento ao cliente</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li><a class="footer-link" target="_blank" href="https://wa.me/5574988274544?text=Preciso de sua ajuda, Marlos Cardoso">Ajuda</a></li>
+
+
+                            <li><a class="footer-link" href="./terms.html">Termos &amp; Condições</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h6 class="text-uppercase mb-3">Redes Sociais</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li><a class="footer-link" target="_blank" href="https://www.instagram.com/marloscard/">Instagram</a></li>
+
+                            <li><a class="footer-link" target="_blank" href="https://wa.me/5574988274544">Whatsapp</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-top pt-4" style="border-color: #1d1d1d !important">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start">
+                            <p class="small text-muted mb-0">&copy; 2023 Todos os direitos reservados.</p>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <p class="small text-muted mb-0">Sistema Completo Criador por <a class="text-white reset-anchor" target="_blank" href="http://geniusleap.tech">Genius Leap</a></p>
+                            <!-- If you want to remove the backlink, please purchase the Attribution-Free License. See details in readme.txt or license.txt. Thanks!-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- JavaScript files-->
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script>
+            document.querySelectorAll('.button').forEach(button => button.addEventListener('click', e => {
+                if (!button.classList.contains('loading')) {
+
+                    button.classList.add('loading');
+
+                    setTimeout(() => button.classList.remove('loading'), 3700);
+
+                }
+                e.preventDefault();
+            }));
+        </script>
+
+        <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    </div>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.4.0/moment.min.js"></script>
+    <script src="./js/checkout.js"></script>
+</body>
+
+</html>

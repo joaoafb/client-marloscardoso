@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Produtos | Marlos Cardoso - Moda Masculina Premium</title>
+    <meta name="description" content="Loja de moda masculina premium com uma ampla seleção de trajes, sapatos, calças, camisas e gravatas. Encontre produtos de luxo e algumas marcas próprias exclusivas.">
+    <meta name="keywords" content="Marlos Cardoso, moda masculina, roupas masculinas, moda premium, trajes, sapatos masculinos, calças, camisas, gravatas">
+    <meta name="author" content="Marlos Cardoso">
+    <link rel="canonical" href="http://www.marloscardoso.com/">
+    <meta property="og:title" content="Marlos Cardoso - Moda Masculina Premium">
+    <meta property="og:description" content="Loja de moda masculina premium com uma ampla seleção de trajes, sapatos, calças, camisas e gravatas. Encontre produtos de luxo e algumas marcas próprias exclusivas.">
+    <meta property="og:image" content="https://192.168.1.105/img/logopng.png">
+    <meta property="og:url" content="http://www.marloscardoso.com/">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+
+
+    <!-- Google fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap">
+    <!-- theme stylesheet-->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.29.1/moment.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/logo.ico">
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="./js/detail.js"></script>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+
+</head>
+
+<body>
+    <div class="page-holder bg-light">
+        <!-- navbar-->
+        <header class="header bg-white">
+            <div class="container px-lg-3">
+                <nav class="navbar navbar-expand-lg navbar-light py-3 px-lg-0"><a class="navbar-brand" href="./index.html"><span class="fw-bold text-uppercase text-dark">Marlos Cardoso</span></a>
+                    <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <!-- Link--><a class="nav-link" href="./index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <!-- Link--><a class="nav-link" href="./shop.html">Loja</a>
+                            </li>
+
+
+                        </ul>
+
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <section class="py-5">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-6">
+                        <!-- PRODUCT SLIDER-->
+                        <div class="row m-sm-0">
+
+                            <div class="col-sm-10 order-1 order-sm-2">
+
+
+                                <img class="img-fluid" id="product-img2" src="" alt="...">
+                                <div class="slideimg">
+                                    <img src="" id="um" alt="">
+                                    <img src="" id="dois" alt="">
+                                    <img src="" id="tres" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PRODUCT DETAILS-->
+                    <div class="col-lg-6">
+
+                        <h1 id="product-title"></h1>
+                        <p class="text-muted lead" id="product-price"></p>
+                        <p class="text-sm mb-4" id="product-description"></p>
+                        <div class="row align-items-stretch mb-4">
+
+
+                            <ul class="list-unstyled small d-inline-block">
+                                <li class="px-3 py-2 mb-1 bg-white"><strong class="text-uppercase">Código:</strong><span class="ms-2 text-muted" id="product-id"></span></li>
+                                <li class="px-3 py-2 mb-1 bg-white text-muted"><strong class="text-uppercase text-dark">Categoria:</strong>
+                                    <a class="reset-anchor ms-2" id="product-category" href="#!"></a>
+                                </li>
+                                <li class="px-3 py-2 mb-1 bg-white text-muted"><strong class="text-uppercase text-dark">Modelo:</strong>
+                                    <a class="reset-anchor ms-2" href="#!" id="product-modelo"></a>
+                                </li>
+                                <br>
+
+                            </ul>
+
+                            <ul class="list-unstyled small d-inline-block">
+                                <li class="px-3 py-2 mb-1 bg-white">
+                                    <label for="">Calcular Frete:</label><br>
+                                    <form id="formFrete">
+                                        <input type="text" maxlength="8" minlength="8" required class="inputcep" placeholder="Digite aqui seu Cep">
+                                        <script>
+                                            // Função para formatar o CEP
+                                            function formatarCEP(cep) {
+                                                // Remove todos os caracteres não numéricos do CEP
+                                                cep = cep.replace(/\D/g, '');
+
+                                                // Verifica se o CEP possui o tamanho correto (8 dígitos)
+                                                if (cep.length === 8) {
+                                                    // Formata o CEP no padrão "XXXXX-XXX"
+                                                    cep = cep.replace(/^(\d{5})(\d{3})$/, '$1-$2');
+                                                }
+
+                                                return cep;
+                                            }
+
+                                            // Event listener para capturar mudanças no campo de input
+                                            const inputCEP = document.querySelector('.inputcep');
+                                            inputCEP.addEventListener('input', function() {
+                                                // Obtém o valor do campo de input
+                                                const valor = this.value;
+
+                                                // Formata o valor do CEP
+                                                const cepFormatado = formatarCEP(valor);
+
+                                                // Atualiza o valor do campo de input com o CEP formatado
+                                                this.value = cepFormatado;
+                                            });
+                                        </script>
+                                        <button class="btn btn-dark" type="submit">Calcular</button>
+                                    </form>
+                                    <p>Escolha o frete:</p>
+                                    <div class="resultfrete" onclick="document.querySelector('#optionFrete').innerHTML = '';  document.querySelector('#btnComprar').innerHTML = 'Adicionar ao carrinho R$' + parseFloat(sessionStorage.getItem('valorproduto'));ocalStorage.setItem('valorfrete', 0)"
+                                        style="padding-left: 0;width: 150px;margin-left: 0;">
+                                        <i class="lni lni-hand"></i>
+                                        <div class="flex column" style="flex-direction: column;display: flex;margin-left: 0 !important; ">
+                                            <label for="">Entrega à combinar</label>
+
+                                        </div>
+                                    </div>
+
+                                    <div id="optionFrete" class="flex row">
+                                    </div>
+                            </ul>
+                            <p id="datafrete" style="font-size: 10pt;color: gray;padding-left: 20px;">Frete: R$0 | Prazo: 0 dias</p>
+                            <div style="width: 100%;" class="col-sm-3 pl-sm-0" id="product-addcart"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+    </div>
+    </section>
+
+
+
+    <footer class="bg-dark text-white">
+        <div class="container py-4">
+            <div class="row py-5">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h6 class="text-uppercase mb-3">Atendimento ao cliente</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li><a class="footer-link" href="#!">Ajuda</a></li>
+
+                        <li><a class="footer-link" href="#!">Termos &amp; Condições</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h6 class="text-uppercase mb-3">Redes Sociais</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li><a class="footer-link" href="#!">Instagram</a></li>
+
+                        <li><a class="footer-link" href="#!">Whatsapp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top pt-4" style="border-color: #1d1d1d !important">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="small text-muted mb-0">&copy; 2023 Todos os direitos reservados.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p class="small text-muted mb-0">Sistema Completo Criador por <a class="text-white reset-anchor" href="http://geniusleap.tech">Genius Leap</a></p>
+                        <!-- If you want to remove the backlink, please purchase the Attribution-Free License. See details in readme.txt or license.txt. Thanks!-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- JavaScript files-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    </div>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            // Opções de configuração, se necessário
+            // Por exemplo:
+            slidesPerView: 1,
+            spaceBetween: 30,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
+</body>
+
+</html>

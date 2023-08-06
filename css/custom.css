@@ -1,0 +1,757 @@
+/* Reset de estilos para melhor consistência */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Estilos para o corpo do documento */
+
+:root {
+    --corpadrao: #004eac;
+}
+
+body {
+    padding: 10px;
+}
+
+#btnVoltar {
+    width: 200px;
+    height: 60px;
+}
+
+.card.border-0.rounded-0.p-lg-4.bg-light {
+    margin-top: 20px !important;
+    border-radius: 15px !important;
+}
+
+.form-control {
+    border-radius: 10px;
+    height: 60px !important;
+}
+
+#btnComprar {
+    width: 200px;
+    height: 60px;
+}
+
+.container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    flex-direction: column !important;
+}
+
+.formBx form {
+    width: 400px !important;
+}
+
+
+/* Estilos para os links na navegação */
+
+.nav-link i {
+    padding-right: 10px;
+}
+
+footer {
+    border-radius: 20px !important;
+}
+
+section {
+    border-radius: 20px !important;
+}
+
+
+/* Estilos para a exibição das imagens na slideimg */
+
+.slideimg {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.slideimg img {
+    width: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid black;
+    transition: transform 0.2s ease-in-out;
+    margin: 5px;
+}
+
+.slideimg img:hover {
+    transform: scale(1.1);
+}
+
+
+/* Estilos para os botões frete e luxo */
+
+.frete,
+.luxo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    width: 150px;
+    border-radius: 5px;
+    outline: none;
+    padding: 5px;
+    height: 50px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.frete {
+    background-color: #39b54a;
+}
+
+.luxo {
+    background-color: #6566ff;
+}
+
+
+/* Estilos para a lista de produtos */
+
+#list-products {
+    display: flex;
+}
+
+
+/* Estilos para a disposição dos elementos em linha */
+
+.flexrow {
+    display: flex;
+    flex-direction: row;
+}
+
+.flexrow div {
+    margin: 5px;
+}
+
+
+/* Estilos para os ícones e texto nos botões frete e luxo */
+
+.frete i,
+.luxo i {
+    margin-left: 10px;
+    transform: scale(1.5);
+}
+
+.frete span,
+.luxo span {
+    padding-left: 20px;
+}
+
+
+/* Estilos para o resultado do frete */
+
+.resultfrete {
+    border: 1px solid rgba(128, 128, 128, 0.252);
+    display: flex;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 12px;
+    width: auto;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.resultfrete:hover {
+    background-color: black;
+    color: white;
+}
+
+.resultfrete i {
+    margin-right: 10px;
+    margin-left: 10px;
+    transform: scale(1.5);
+}
+
+
+/* Estilos para os botões */
+
+.btn-dark {
+    margin: 5px;
+    border-radius: 5px;
+}
+
+
+/* Estilos para o campo de entrada de CEP */
+
+.inputcep {
+    border: 1px solid rgba(128, 128, 128, 0.386);
+    outline: none;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+
+/* Estilos para as imagens fluidas */
+
+.img-fluid {
+    opacity: 20%;
+    animation: fadeUpAnimation 1s forwards;
+    transition: opacity 0.3s ease, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation-delay: 200ms;
+    border-radius: 15px !important;
+}
+
+#list-products .img-fluid {
+    width: 150px;
+    height: 250px;
+    object-fit: contain !important;
+}
+
+.img-fluid:hover {
+    opacity: 100%;
+    transform: scale(1.02);
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+@keyframes fadeUpAnimation {
+    to {
+        opacity: 100%;
+    }
+}
+
+
+/* Estilos para os botões */
+
+.btn {
+    border-radius: 5px;
+}
+
+
+/* Estilos para a barra de navegação */
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-nav {
+    text-align: right;
+    justify-content: end;
+    align-items: end;
+}
+
+.navbar-toggler:focus {
+    border: none;
+    outline: none;
+}
+
+
+/* Estilos para o campo de busca de produtos */
+
+#product-search {
+    margin-bottom: 20px;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+#product-search:active {
+    outline: none;
+    border: none
+}
+
+
+/* Estilos para os links das categorias */
+
+.categoria {
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    text-decoration: none;
+    list-style: none;
+    font-size: 10pt;
+    margin: 0;
+    padding: 5px;
+}
+
+#lista-categ {
+    justify-content: start !important;
+}
+
+.categoria:hover {
+    background-color: black;
+    color: white;
+}
+
+
+/* Estilos para as seções de produtos */
+
+.sectionprodutos {
+    padding: 20px;
+    margin: 10px;
+}
+
+
+/* Estilos para o popup swal2 */
+
+.swal2-popup {
+    border-radius: 20px;
+}
+
+
+/* Estilos para o conteúdo do modal */
+
+.modal-content {
+    border-radius: 20px;
+}
+
+
+/* Estilos para o logotipo da empresa */
+
+#logoempresa {
+    display: none;
+    margin-left: 15vw;
+}
+
+
+/* Estilos para o botão de fechar */
+
+.btn-close {}
+
+
+/* Estilos para a imagem do produto */
+
+#product-img2 {
+    transition: transform 0.2s ease-in-out;
+    background-color: transparent;
+    border-radius: 20px;
+}
+
+.swiper-slide {
+    background-color: transparent;
+}
+
+
+/* Estilos para as imagens dos links animsition-link */
+
+.animsition-link img {
+    border-radius: 10px;
+}
+
+
+/* Estilos para a lista de pedidos */
+
+#list-pedidos {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin: 0 auto;
+    border-radius: 20px;
+    width: 80%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+/* Estilos para a imagem de carregamento */
+
+.img-loading {
+    margin: 0 auto;
+}
+
+
+/* Estilos para as células da tabela */
+
+th,
+td {
+    border-radius: 5px;
+    padding: 8px;
+    text-align: center;
+}
+
+
+/* Estilos para o cabeçalho da tabela */
+
+th {
+    background-color: #f2f2f2;
+}
+
+
+/* Estilos para o botão de exclusão de item */
+
+tr button {
+    margin-top: 20px;
+}
+
+
+/* Estilos para as linhas pares da tabela */
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+/* Estilos para o ícone de lixeira */
+
+.fa-trash-alt {
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.fa-trash-alt:hover {
+    color: red;
+    transform: scale(1.3);
+}
+
+
+/* Estilos para o corpo do card */
+
+.card-body {
+    border-radius: 10px;
+}
+
+
+/* Estilos para o preloader */
+
+#preloader {
+    overflow: hidden;
+    background-color: black;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+#preloader img {
+    width: 200px;
+}
+
+
+/* Estilos para o banner */
+
+#banner {
+    transition: box-shadow 0.2s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+
+#banner:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+
+/* Estilos para a segunda coluna na row do grid */
+
+.row.mb-5>.col-lg-6:nth-child(2) {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    border-radius: 10px;
+    padding: 35px;
+    background-color: white;
+}
+
+
+/* Estilos para o botão geral */
+
+#button {
+    font-size: 13pt;
+    transition: transform 0.2s ease-in-out;
+    box-sizing: border-box;
+}
+
+#button:hover {
+    transform: scale(0.5) !important;
+    transition: .2s ease-in-out;
+}
+
+#button:hover {
+    transform: scale(0.95);
+}
+
+
+/* Estilos para a imagem */
+
+#imgl {
+    background-color: black;
+    border: 10px;
+}
+
+.category-item-title {
+    top: 90% !important;
+}
+
+.rectangle {
+    padding: 20px;
+}
+
+.rectangle h3 {
+    margin-bottom: 20px;
+}
+
+#lista-categ {
+    margin-bottom: 20px !important;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cardcat {
+    cursor: pointer;
+    background-color: #f2f2f2;
+    padding: 0px !important;
+    height: 50px !important;
+    border-radius: 10px !important;
+}
+
+
+/* Estilos para dispositivos com largura de tela menor ou igual a 767px (celulares) */
+
+
+/* Estilos específicos para iPhone SE */
+
+@media screen and (max-width: 375px) {
+    #product-img2 {
+        width: 85vw !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .container {
+        margin: 0 auto !important;
+    }
+    .col-lg-6 {
+        width: 90vw !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* Adicione seus estilos para celulares aqui */
+    #button {
+        /* Defina o posicionamento fixo */
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        margin: 0;
+        height: 70px !important;
+        /* Largura total da tela */
+        width: 100vw !important;
+        /* Estilos adicionais para o botão */
+        background-color: black !important;
+        color: #fff;
+        padding: 10px;
+        border-radius: 0 !important;
+        text-align: center;
+        border-top: 3px solid rgb(255, 230, 0);
+    }
+    #btnComprar {
+        width: 100% !important;
+    }
+    #product-img2 {
+        margin: 0 auto !important;
+    }
+}
+
+
+/* Estilos para dispositivos com largura de tela entre 768px e 1023px (tablets) */
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Adicione seus estilos para tablets aqui */
+    #button {
+        height: 60px !important;
+    }
+}
+
+.button {
+    --background: #362a89;
+    --text: #fff;
+    --cart: #fff;
+    --tick: var(--background);
+    position: relative;
+    border: none;
+    background: none;
+    padding: 8px 28px;
+    border-radius: 8px;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+    min-width: 144px;
+    color: var(--text);
+    background: var(--background);
+    transform: scale(var(--scale, 1));
+    transition: transform 0.4s cubic-bezier(0.36, 1.01, 0.32, 1.27);
+}
+
+.button:active {
+    --scale: 0.95;
+}
+
+.button span {
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+    position: relative;
+    padding-left: 24px;
+    margin-left: -8px;
+    line-height: 26px;
+    transform: translateY(var(--span-y, 0));
+    transition: transform 0.7s ease;
+}
+
+.button span:before,
+.button span:after {
+    content: '';
+    width: var(--w, 2px);
+    height: var(--h, 14px);
+    border-radius: 1px;
+    position: absolute;
+    left: var(--l, 8px);
+    top: var(--t, 6px);
+    background: currentColor;
+    transform: scale(0.75) rotate(var(--icon-r, 0deg)) translateY(var(--icon-y, 0));
+    transition: transform 0.65s ease 0.05s;
+}
+
+.button span:after {
+    --w: 14px;
+    --h: 2px;
+    --l: 2px;
+    --t: 12px;
+}
+
+.button .cart {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -13px 0 0 -18px;
+    transform-origin: 12px 23px;
+    transform: translateX(-120px) rotate(-18deg);
+}
+
+.button .cart:before,
+.button .cart:after {
+    content: '';
+    position: absolute;
+}
+
+.button .cart:before {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px var(--cart);
+    bottom: 0;
+    left: 9px;
+    filter: drop-shadow(11px 0 0 var(--cart));
+}
+
+.button .cart:after {
+    width: 16px;
+    height: 9px;
+    background: var(--cart);
+    left: 9px;
+    bottom: 7px;
+    transform-origin: 50% 100%;
+    transform: perspective(4px) rotateX(-6deg) scaleY(var(--fill, 0));
+    transition: transform 1.2s ease var(--fill-d);
+}
+
+.button .cart svg {
+    z-index: 1;
+    width: 36px;
+    height: 26px;
+    display: block;
+    position: relative;
+    fill: none;
+    stroke: var(--cart);
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.button .cart svg polyline:last-child {
+    stroke: var(--tick);
+    stroke-dasharray: 10px;
+    stroke-dashoffset: var(--offset, 10px);
+    transition: stroke-dashoffset 0.4s ease var(--offset-d);
+}
+
+.button.loading {
+    --scale: 0.95;
+    --span-y: -32px;
+    --icon-r: 180deg;
+    --fill: 1;
+    --fill-d: 0.8s;
+    --offset: 0;
+    --offset-d: 1.73s;
+}
+
+.button.loading .cart {
+    animation: cart 3.4s linear forwards 0.2s;
+}
+
+@keyframes cart {
+    12.5% {
+        transform: translateX(-60px) rotate(-18deg);
+    }
+    25%,
+    45%,
+    55%,
+    75% {
+        transform: none;
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    44%,
+    56% {
+        transform-origin: 12px 23px;
+    }
+    45%,
+    55% {
+        transform-origin: 50% 50%;
+    }
+    87.5% {
+        transform: translateX(70px) rotate(-18deg);
+    }
+    100% {
+        transform: translateX(140px) rotate(-18deg);
+    }
+}
+
+html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+body .dribbble {
+    position: fixed;
+    display: block;
+    right: 20px;
+    bottom: 20px;
+}
+
+body .dribbble img {
+    display: block;
+    height: 28px;
+}
+
+body .twitter {
+    position: fixed;
+    display: block;
+    right: 64px;
+    bottom: 14px;
+}
+
+body .twitter svg {
+    width: 32px;
+    height: 32px;
+    fill: #1da1f2;
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja | Marlos Cardoso - Moda Masculina Premium</title>
+    <meta name="description" content="Loja de moda masculina premium com uma ampla seleção de trajes, sapatos, calças, camisas e gravatas. Encontre produtos de luxo e algumas marcas próprias exclusivas.">
+    <meta name="keywords" content="Marlos Cardoso, moda masculina, roupas masculinas, moda premium, trajes, sapatos masculinos, calças, camisas, gravatas">
+    <meta name="author" content="Marlos Cardoso">
+    <link rel="canonical" href="http://www.marloscardoso.com/">
+    <meta property="og:title" content="Marlos Cardoso - Moda Masculina Premium">
+    <meta property="og:description" content="Loja de moda masculina premium com uma ampla seleção de trajes, sapatos, calças, camisas e gravatas. Encontre produtos de luxo e algumas marcas próprias exclusivas.">
+    <meta property="og:image" content="https://192.168.1.105/img/logopng.png">
+    <meta property="og:url" content="http://www.marloscardoso.com/">
+    <meta property="og:type" content="website">
+
+
+    <!-- Google fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/logo.ico">
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+
+    <script src="./js/shop.js"></script>
+</head>
+
+<body>
+    <div class="page-holder">
+        <!-- navbar-->
+        <header class="header bg-white">
+            <div class="container px-lg-3">
+                <nav class="navbar navbar-expand-lg navbar-light py-3 px-lg-0">
+                    <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto">
+
+                            <li class="nav-item">
+                                <span class="fw-bold text-uppercase text-dark" style="font-size: 16pt;">Marlos Cardoso</span>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="https://www.instagram.com/marloscard/" target="_blank" class="nav-link"><i class="lni lni-instagram"></i>@marloscard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://wa.me/5574988274544" target="_blank" class="nav-link"><i class="lni lni-whatsapp"></i>(74) 98827-4544</a>
+                            </li>
+
+
+
+                        </ul>
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <!-- Link--><a class="nav-link " href="./index.html"><i class="fas fa-home me-1 text-gray"></i>Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <!-- Link--><a class="nav-link active" href="./shop.html"><i class="fas fa-store me-1 text-gray"></i>Catálogo</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="./cart.html"> <i class="fas fa-dolly-flatbed me-1 text-gray"></i>Carrinho</a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="modal fade" id="productView" tabindex="-1">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content overflow-hidden border-0">
+                    <button class="btn-close p-4 position-absolute top-0 end-0 z-index-20 shadow-0" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-body p-0">
+                        <div class="row align-items-stretch">
+                            <div class="col-lg-6 p-lg-0">
+                                <a class="glightbox product-view d-block h-100 bg-cover bg-center" id="product-image" data-gallery="gallery1" data-glightbox="Gravata 1"></a>
+
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="p-4 my-md-4">
+                                    <ul class="list-inline mb-2">
+                                        <li class="list-inline-item m-0"><i class="fas fa-star small text-warning"></i></li>
+                                        <li class="list-inline-item m-0 1"><i class="fas fa-star small text-warning"></i></li>
+                                        <li class="list-inline-item m-0 2"><i class="fas fa-star small text-warning"></i></li>
+                                        <li class="list-inline-item m-0 3"><i class="fas fa-star small text-warning"></i></li>
+                                        <li class="list-inline-item m-0 4"><i class="fas fa-star small text-warning"></i></li>
+                                    </ul>
+                                    <h2 class="h4" id="product-title"></h2>
+                                    <p class="text-muted" id="product-price"></p>
+                                    <p class="text-sm mb-4" id="product-description"> </p>
+                                    <div class="row align-items-stretch mb-4 gx-0">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <!-- HERO SECTION-->
+            <section class="py-5 bg-light">
+                <div class="container">
+                    <div class="row px-4 px-lg-5 py-lg-4 align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="h2 text-uppercase mb-0">Catálogo</h1>
+                        </div>
+                        <div class="col-lg-6 text-lg-end">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-lg-end mb-0 px-0 bg-light">
+                                    <li class="breadcrumb-item"><a class="text-dark" href="./index.html">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Catálogo</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="py-5">
+                <div class="container p-0">
+                    <div class="row">
+
+
+                        <!-- SHOP LISTING-->
+                        <div class="col-lg-9 order-1 order-lg-2 mb-5 mb-lg-0">
+
+                            <div class="row" id="list-products">
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+            </section>
+            </div>
+            <footer class="bg-dark text-white">
+                <div class="container py-4">
+                    <div class="row py-5">
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <h6 class="text-uppercase mb-3">Atendimento ao cliente</h6>
+                            <ul class="list-unstyled mb-0">
+                                <li><a class="footer-link" target="_blank" href="https://wa.me/5574988274544?text=Preciso de sua ajuda, Marlos Cardoso">Ajuda</a></li>
+
+
+                                <li><a class="footer-link" href="./terms.html">Termos &amp; Condições</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-4">
+                            <h6 class="text-uppercase mb-3">Redes Sociais</h6>
+                            <ul class="list-unstyled mb-0">
+                                <li><a class="footer-link" target="_blank" href="https://www.instagram.com/marloscard/">Instagram</a></li>
+
+                                <li><a class="footer-link" target="_blank" href="https://wa.me/5574988274544">Whatsapp</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="border-top pt-4" style="border-color: #1d1d1d !important">
+                        <div class="row">
+                            <div class="col-md-6 text-center text-md-start">
+                                <p class="small text-muted mb-0">&copy; 2023 Todos os direitos reservados.</p>
+                            </div>
+                            <div class="col-md-6 text-center text-md-end">
+                                <p class="small text-muted mb-0">Sistema Completo Criador por <a class="text-white reset-anchor" target="_blank" href="http://geniusleap.tech">Genius Leap</a></p>
+                                <!-- If you want to remove the backlink, please purchase the Attribution-Free License. See details in readme.txt or license.txt. Thanks!-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- JavaScript files-->
+            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+            <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        </div>
+</body>
+
+</html>
