@@ -152,7 +152,7 @@ function loadpage() {
         if (document.querySelector(".inputcep").value.length >= 8) {
             document.querySelector("#optionFrete").innerHTML = ''
 
-            fetch('https://100.24.182.107/calcularFrete', {
+            fetch('https://api.geniusleap.cloud/calcularFrete', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
