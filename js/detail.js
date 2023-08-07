@@ -3,7 +3,7 @@ function loadpage() {
 
     const hash = window.location.hash.substring(1);
     const decodedHash = decodeURIComponent(hash);
-    fetch('https://54.224.17.32/api/marloscardoso/listprodutos')
+    fetch('https://api.geniusleap.cloud/api/marloscardoso/listprodutos')
         .then(response => response.json())
         .then(data => {
             data.forEach(item => {
@@ -152,7 +152,7 @@ function loadpage() {
         if (document.querySelector(".inputcep").value.length >= 8) {
             document.querySelector("#optionFrete").innerHTML = ''
 
-            fetch('/calcularFrete', {
+            fetch('https://100.24.182.107/calcularFrete', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

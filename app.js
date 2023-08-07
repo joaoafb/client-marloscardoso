@@ -15,7 +15,7 @@
           document.querySelector("#btnsair").style.display = 'none'
       }
   })
-  fetch('https://54.224.17.32/api/marloscardoso/listcategorias')
+  fetch('https://api.geniusleap.cloud/api/marloscardoso/listcategorias')
       .then(response => response.json())
       .then(data => {
 
@@ -40,7 +40,7 @@
 
 
 
-  fetch('https://54.224.17.32/api/marloscardoso/listprodutos')
+  fetch('https://api.geniusleap.cloud/api/marloscardoso/listprodutos')
       .then(response => response.json())
       .then(data => {
 

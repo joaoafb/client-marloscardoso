@@ -31,7 +31,7 @@ document.getElementById("form-cadastro").addEventListener("submit", function(eve
 });
 async function sendData(data) {
     try {
-        const response = await fetch("https://54.224.17.32/api/marloscardoso/loginusuario", {
+        const response = await fetch("https://api.geniusleap.cloud/api/marloscardoso/loginusuario", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -86,7 +86,7 @@ async function sendData(data) {
 
 async function sendDataCadastro(dados) {
     try {
-        const response = await fetch("https://54.224.17.32/api/marloscardoso/cadastrocliente", {
+        const response = await fetch("https://api.geniusleap.cloud/api/marloscardoso/cadastrocliente", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

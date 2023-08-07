@@ -517,6 +517,9 @@ tr:nth-child(even) {
 /* Estilos específicos para iPhone SE */
 
 @media screen and (max-width: 375px) {
+    body {
+        zoom: 80% !important;
+    }
     #product-img2 {
         width: 85vw !important;
         margin: 0 !important;
@@ -525,8 +528,49 @@ tr:nth-child(even) {
     .container {
         margin: 0 auto !important;
     }
-    .col-lg-6 {
-        width: 90vw !important;
+    .row.mb-5>.col-lg-6:nth-child(2) {
+        width: 100% !important;
+    }
+    #button {
+        /* Defina o posicionamento fixo */
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        margin: 0;
+        height: 70px !important;
+        /* Largura total da tela */
+        width: 100vw !important;
+        /* Estilos adicionais para o botão */
+        background-color: black !important;
+        color: #fff;
+        padding: 10px;
+        border-radius: 0 !important;
+        text-align: center;
+        border-top: 3px solid rgb(255, 230, 0);
+    }
+    #btnComprar {
+        width: 100% !important;
+    }
+    #product-img2 {
+        margin: 0 auto !important;
+    }
+    .inputcep {
+        width: 100% !important;
+        height: 50px;
+        padding-left: 10px;
+        margin: 0 auto;
+    }
+    #formFrete button {
+        margin-top: 10px !important;
+        width: 100%;
+        height: 50px;
+        margin: 0 auto;
+        margin-bottom: 15px !important;
+    }
+    .resultfrete {
+        width: 100% !important;
+        margin: 0 auto;
+        margin-top: 5px !important;
     }
 }
 

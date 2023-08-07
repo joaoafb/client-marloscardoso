@@ -174,7 +174,7 @@ document.querySelector("#form").addEventListener("submit", function(event) {
             status: 'Aguardando Pagamento',
             data: dataHoraFormatada
         }
-        fetch("https://54.224.17.32/api/marloscardoso/addpedidos", {
+        fetch("https://api.geniusleap.cloud/api/marloscardoso/addpedidos", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
