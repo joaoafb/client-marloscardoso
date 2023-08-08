@@ -1,8 +1,8 @@
 /* Reset de estilos para melhor consistência */
 
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
 
@@ -519,6 +519,7 @@ tr:nth-child(even) {
     #nav span {
         text-align: left;
         width: 50%;
+        font-size: 10pt !important;
     }
     body {
         zoom: 80% !important;
@@ -606,6 +607,9 @@ tr:nth-child(even) {
     #banner {
         background-color: white !important;
         background-image: none !important;
+    }
+    #nav span {
+        font-size: 15pt !important;
     }
 }
 
