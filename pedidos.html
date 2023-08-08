@@ -49,51 +49,65 @@
             <div></div>
         </div>
     </div>
-    <div class="page-holder">
+    <nav class="fullscreen-menu ">
+
+        <li class="nav-item">
+            <!-- Link--><a class="nav-link active" href="./index.html"><i class="fas fa-home me-1 text-gray"></i>Home</a>
+        </li>
+        <li class="nav-item">
+            <!-- Link--><a class="nav-link" href="/shop.html"><i class="fas fa-store me-1 text-gray"></i>Catálogo</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./pedidos.html"> <i class="fas fa-list me-1 text-gray"></i>Pedidos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./cart.html"> <i class="fas fa-dolly-flatbed me-1 text-gray"></i>Carrinho</a>
+        </li>
+
+        <li class="nav-item" id="btnlogin">
+            <a class="nav-link" href="./login.html"> <i class="fas fa-user me-1 text-gray fw-normal"></i>Entrar</a>
+        </li>
+        <li class="nav-item" id="btnsair" onclick="deslogar()">
+            <a class="nav-link" href="#deslogando"> <i class="fas fa-power-off text-gray"></i>Deslogar</a>
+        </li>
+
+        <button onclick="closemenu()" class="btn btn-dark zoom" style="background-color: white;color: black;margin-left: 0;width: 150px;height: 50px;display: flex;justify-content: center;
+        align-items: center;" href="./shop.html"><i class="lni lni-close" style="padding-right: 10px;"></i>Voltar</button>
+
+
+    </nav>
+
+    <div class="page-holder bg-light">
         <!-- navbar-->
         <header class="header bg-white">
-            <div class="container px-lg-3">
-                <nav class="navbar navbar-expand-lg navbar-light py-3 px-lg-0">
-                    <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto">
-
-                            <li class="nav-item">
-                                <span class="fw-bold text-uppercase text-dark" style="font-size: 16pt;">Marlos Cardoso</span>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="https://www.instagram.com/marloscard/" target="_blank" class="nav-link"><i class="lni lni-instagram"></i>@marloscard</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://wa.me/5574988274544" target="_blank" class="nav-link"><i class="lni lni-whatsapp"></i>(74) 98827-4544</a>
-                            </li>
+            <div id="nav">
+                <li class="nav-item" style="display: flex;flex-direction: row;justify-content: center;align-items: center !important;">
+                    <img src="./img/logopng.png" width="35px" alt="">
+                    <span class="fw-bold text-uppercase text-black" style="font-size: 16pt;padding-left: 10px;padding-top: 5px;">Marlos Cardoso</span>
+                </li>
 
 
 
-                        </ul>
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <!-- Link--><a class="nav-link " href="./index.html"><i class="fas fa-home me-1 text-gray"></i>Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <!-- Link--><a class="nav-link " href="./shop.html"><i class="fas fa-store me-1 text-gray"></i>Catálogo</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="./pedidos.html"> <i class="fas fa-list me-1 text-gray"></i>Pedidos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./cart.html"> <i class="fas fa-dolly-flatbed me-1 text-gray"></i>Carrinho</a>
-                            </li>
+                <button onclick="menushow()" id="btnMenu" class="btn btn-dark zoom" style="border: 1px solid white;right: 50px !important;position: absolute;cursor: pointer;width: 50px;height: 50px;display: flex;justify-content: center;
+                    align-items: center;" href="./shop.html"><i class="lni lni-list" ></i></button>
 
-
-                        </ul>
-                    </div>
-                </nav>
             </div>
         </header>
+        <script>
+            function menushow() {
+                document.querySelector(".fullscreen-menu").classList.add("active")
+                document.querySelector("#nav").style.display = 'none'
+            }
 
-        <section id="list-pedidos">
+            function closemenu() {
+                document.querySelector(".fullscreen-menu").classList.remove("active")
+                setTimeout(() => {
+                    document.querySelector("#nav").style.display = 'flex'
+                }, 1000);
+            }
+        </script>
+
+        <section id="list-pedidos" style="margin-top: 200px;padding: 20px;border-radius: 20px;">
             <h1>Seus pedidos</h1>
             <a href="https://api.whatsapp.com/send?phone=5574988274544&text=Quero cancelar um pedido" target="_blank" class="btn btn-primary">Deseja cancelar algum pedido? Clique Aqui</a>
             <div id="table"></div>

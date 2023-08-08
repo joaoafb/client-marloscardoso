@@ -1,3 +1,21 @@
+document.addEventListener("DOMContentLoaded", function() {
+        if (localStorage.getItem("token") && localStorage.getItem("token").trim() !== '') {
+            document.querySelector("#btnlogin").style.display = 'none'
+            document.querySelector("#btnsair").style.display = 'block'
+        } else {
+
+            document.querySelector("#btnlogin").style.display = 'block'
+            document.querySelector("#btnsair").style.display = 'none'
+        }
+    })
+    // Função para realizar o logout (limpar o token do sessionStorage e localStorage)
+function deslogar() {
+    sessionStorage.removeItem("token");
+    localStorage.removeItem("token");
+    console.log("Usuário deslogado.");
+    location.href = '/index.html'
+}
+
 function checkout() {
     if (document.querySelector("#total-price").textContent == "R$0") {
         let timerInterval
@@ -201,93 +219,4 @@ function excluirCart(token) {
     } else {
         console.log('O localStorage não é suportado neste navegador.');
     }
-}
-
-
-function finalizar() {
-    let timerInterval
-    Swal.fire({
-        title: 'Finalizando Seu Pedido!',
-        html: 'Aguarde 🕒',
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: () => {
-            Swal.showLoading()
-
-        },
-        willClose: () => {
-            clearInterval(timerInterval)
-        }
-    }).then((result) => {
-        /* Read more about handling dismissals below */
-        if (result.dismiss === Swal.DismissReason.timer) {
-            // Função para gerar o link do WhatsApp com o número e mensagem
-            function gerarLinkWhatsApp(numeroTelefone, mensagem) {
-                const linkWhatsApp = `https://api.whatsapp.com/send?phone=${encodeURIComponent(numeroTelefone)}&text=${encodeURIComponent(mensagem)}`;
-                return linkWhatsApp;
-            }
-
-            // Exemplo de uso
-
-            const savedData = JSON.parse(localStorage.getItem('Cart')) || [];
-
-            const titles = savedData.map(objeto => objeto.title + ' R$' + objeto.price);
-
-            const dataHoraAtual = moment();
-            const formatoDesejado = 'DD/MM/YYYY HH:mm';
-            const dataHoraFormatada = dataHoraAtual.format(formatoDesejado);
-
-
-
-            const total = savedData.map(objeto => objeto.price)
-                .reduce((acumulador, valorAtual) => acumulador + parseFloat(valorAtual), 0);
-
-            const numeroTelefone = '+5574991379747'; // Substitua pelo número de telefone desejado
-            const msg = `
-            
-            Olá ` + localStorage.getItem("userstore") + `,
-
-Obrigado por realizar o seu pedido conosco!
-
-Detalhes do Pedido:
-Pedido #: [NÚMERO DO PEDIDO]
-Data do Pedido: ` + dataHoraFormatada + `
-Total: ` + total + `
-
-Itens do Pedido:
-1. [NOME DO PRODUTO 1] - Quantidade: [QUANTIDADE]
-   Preço Unitário: [PREÇO UNITÁRIO]
-   Subtotal: [SUBTOTAL DO PRODUTO 1]
-
-2. [NOME DO PRODUTO 2] - Quantidade: [QUANTIDADE]
-   Preço Unitário: [PREÇO UNITÁRIO]
-   Subtotal: [SUBTOTAL DO PRODUTO 2]
-
-...
-
-Total do Pedido: R$` + total + `
-
-
-
-
-
-Se você tiver alguma dúvida ou precisar de assistência, entre em contato conosco pelo número (74)9 8827-4544.
-
-Agradecemos a sua preferência e estamos à disposição para ajudar no que for necessário!
-
-Atenciosamente,
-Marlos Cardoso | Moda Masculina
-
-`
-            const mensagem = `
-        *Produtos:* ` + titles + `
-        *Valor Total:* R$` + total + `
-        *Pedido realizado:* ` + dataHoraFormatada + `
-        `
-            const linkWhatsApp = gerarLinkWhatsApp(numeroTelefone, mensagem);
-            window.open(linkWhatsApp, '_blank');
-        }
-    })
-
-
 }

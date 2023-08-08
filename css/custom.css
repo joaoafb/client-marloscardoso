@@ -438,14 +438,13 @@ tr:nth-child(even) {
 
 /* Estilos para o banner */
 
-#banner {
-    transition: box-shadow 0.2s ease-in-out;
-    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+.zoom {
+    transition: 0.2s ease-in-out;
 }
 
-#banner:hover {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-    transition: box-shadow 0.2s ease-in-out;
+.zoom:hover {
+    transform: scale(0.90);
+    transition: 0.2s ease-in-out;
 }
 
 
@@ -517,6 +516,10 @@ tr:nth-child(even) {
 /* Estilos específicos para iPhone SE */
 
 @media screen and (max-width: 375px) {
+    #nav span {
+        text-align: left;
+        width: 50%;
+    }
     body {
         zoom: 80% !important;
     }
@@ -595,9 +598,14 @@ tr:nth-child(even) {
     }
     #btnComprar {
         width: 100% !important;
+        height: 70px;
     }
     #product-img2 {
         margin: 0 auto !important;
+    }
+    #banner {
+        background-color: white !important;
+        background-image: none !important;
     }
 }
 
@@ -605,6 +613,10 @@ tr:nth-child(even) {
 /* Estilos para dispositivos com largura de tela entre 768px e 1023px (tablets) */
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+    #banner {
+        background-color: white !important;
+        background-image: none !important;
+    }
     /* Adicione seus estilos para tablets aqui */
     #button {
         height: 60px !important;
@@ -741,6 +753,30 @@ tr:nth-child(even) {
     animation: cart 3.4s linear forwards 0.2s;
 }
 
+.form-control {
+    width: 100vw !important;
+    padding-left: 20px !important;
+}
+
+#nav {
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    transition: .2s ease-in-out !important;
+    transform: translateX(-50%);
+    z-index: 999;
+    background-color: white;
+    width: 90vw;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 @keyframes cart {
     12.5% {
         transform: translateX(-60px) rotate(-18deg);
@@ -798,4 +834,69 @@ body .twitter svg {
     width: 32px;
     height: 32px;
     fill: #1da1f2;
+}
+
+
+/* Fullscreen menu styles */
+
+.fullscreen-menu {
+    position: fixed;
+    text-decoration: none;
+    list-style-type: none;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: left 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.fullscreen-menu .nav-item {
+    margin: 0px !important;
+    padding: 0 !important;
+}
+
+.fullscreen-menu.active {
+    left: 0;
+}
+
+.fullscreen-menu ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.fullscreen-menu li {
+    margin-bottom: 1rem;
+}
+
+.fullscreen-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+
+
+/* Content styles */
+
+.content {
+    padding: 2rem;
+}
+
+
+/* Hamburger menu styles */
+
+.hamburger {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1;
 }

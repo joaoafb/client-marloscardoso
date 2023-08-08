@@ -42,54 +42,57 @@
 </head>
 
 <body>
+    <nav class="fullscreen-menu ">
+
+        <li class="nav-item">
+            <!-- Link--><a class="nav-link active" href="./index.html"><i class="fas fa-home me-1 text-gray"></i>Home</a>
+        </li>
+        <li class="nav-item">
+            <!-- Link--><a class="nav-link" href="/shop.html"><i class="fas fa-store me-1 text-gray"></i>Catálogo</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./pedidos.html"> <i class="fas fa-list me-1 text-gray"></i>Pedidos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./cart.html"> <i class="fas fa-dolly-flatbed me-1 text-gray"></i>Carrinho</a>
+        </li>
+
+        <li class="nav-item" id="btnlogin">
+            <a class="nav-link" href="./login.html"> <i class="fas fa-user me-1 text-gray fw-normal"></i>Entrar</a>
+        </li>
+        <li class="nav-item" id="btnsair" onclick="deslogar()">
+            <a class="nav-link" href="#deslogando"> <i class="fas fa-power-off text-gray"></i>Deslogar</a>
+        </li>
+
+        <button onclick="closemenu()" class="btn btn-dark zoom" style="background-color: white;color: black;margin-left: 0;width: 150px;height: 50px;display: flex;justify-content: center;
+        align-items: center;" href="./shop.html"><i class="lni lni-close" style="padding-right: 10px;"></i>Voltar</button>
+
+
+    </nav>
+
+
     <div id="preloader">
         <img src="./img/logopng.png" class="img-loading" alt="">
     </div>
     <div class="page-holder">
         <!-- navbar-->
         <header class="header bg-white">
-            <div class="container px-lg-3">
-                <nav class="navbar navbar-expand-lg navbar-light py-3 px-lg-0">
-                    <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto">
-
-                            <li class="nav-item">
-                                <span class="fw-bold text-uppercase text-dark" style="font-size: 16pt;">Marlos Cardoso</span>
-                            </li>
 
 
-                            <li class="nav-item">
-                                <a href="https://wa.me/5574988274544" target="_blank" class="nav-link"><i class="lni lni-whatsapp"></i>(74) 98827-4544</a>
-                            </li>
+            <div id="nav">
+                <li class="nav-item" style="display: flex;flex-direction: row;justify-content: center;align-items: center !important;">
+                    <img src="./img/logopng.png" width="35px" alt="">
+                    <span class="fw-bold text-uppercase text-black" style="font-size: 16pt;padding-left: 10px;padding-top: 5px;">Marlos Cardoso</span>
+                </li>
 
 
 
-                        </ul>
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <!-- Link--><a class="nav-link active" href="./index.html"><i class="fas fa-home me-1 text-gray"></i>Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <!-- Link--><a class="nav-link" href="/shop.html"><i class="fas fa-store me-1 text-gray"></i>Catálogo</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./pedidos.html"> <i class="fas fa-list me-1 text-gray"></i>Pedidos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./cart.html"> <i class="fas fa-dolly-flatbed me-1 text-gray"></i>Carrinho</a>
-                            </li>
+                <button onclick="menushow()" id="btnMenu" class="btn btn-dark zoom" style="border: 1px solid white;right: 50px !important;position: absolute;cursor: pointer;width: 50px;height: 50px;display: flex;justify-content: center;
+                    align-items: center;" href="./shop.html"><i class="lni lni-list"></i></button>
 
-                            <li class="nav-item" id="btnlogin">
-                                <a class="nav-link" href="./login.html"> <i class="fas fa-user me-1 text-gray fw-normal"></i>Entrar</a>
-                            </li>
-                            <li class="nav-item" id="btnsair" onclick="deslogar()">
-                                <a class="nav-link" href="#deslogando"> <i class="fas fa-power-off text-gray"></i>Deslogar</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
             </div>
+
+
         </header>
         <!--  Modal -->
         <div class="modal fade" id="productView" tabindex="-1">
@@ -126,37 +129,18 @@
             </div>
         </div>
         <!-- HERO SECTION-->
-        <div class="container">
-            <section data-aos="fade-down" class="hero pb-3 bg-cover bg-center d-flex align-items-center" id="banner" style="flex-wrap: wrap;border-radius: 30px;background: url(img/hero-banner-alt.png)">
-                <script>
-                    const backgroundImages = [
-                        '../img/hero-banner-alt.png',
-                        '../img/hero-banner-alt2.png'
-                    ];
+        <div class="container" style="margin-top: 100px;">
+            <section data-aos="fade-down" class="hero pb-3 bg-cover bg-center d-flex align-items-center" id="banner" style="flex-wrap: wrap;border-radius: 30px;background: url(img/hero-banner-alt2.png)">
 
-                    // Variável para rastrear o índice atual da imagem de fundo
-                    let currentImageIndex = 0;
-
-                    // Função para alternar a imagem de fundo
-                    function changeBackgroundImage() {
-                        const bannerElement = document.getElementById('banner');
-                        bannerElement.style.backgroundImage = `url('${backgroundImages[currentImageIndex]}')`;
-
-                        // Atualiza o índice para a próxima imagem de fundo
-                        currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
-                    }
-
-                    // Define o intervalo para trocar a imagem de fundo a cada 2 segundos
-                    setInterval(changeBackgroundImage, 8000);
-                </script>
                 <img src="./img/logopng.png" width="100px" id="logoempresa" alt="" srcset="">
                 <div class="container py-5">
 
                     <div class="row px-4 px-lg-5">
 
                         <div class="col-lg-6">
-                            <p class="text-muted small text-uppercase mb-2">"Estilo masculino elevado à máxima elegância."</p>
-                            <h1 class="h2 text-uppercase mb-3"><img src="./img/logopng.png" width="30px" style="margin-top: -10px;" alt=""> Marlos Cardoso</h1><a class="btn btn-dark" href="./shop.html">Ver Produtos</a>
+                            <p class="text-muted small text-uppercase mb-2" style="font-size: 15pt;">"Estilo masculino elevado à máxima elegância."</p>
+                            <a class="btn btn-dark zoom" style="margin-left: 0;width: 150px;height: 50px;display: flex;justify-content: center;
+                            align-items: center;" href="./shop.html">Ver Produtos</a>
                         </div>
                     </div>
                 </div>
@@ -164,7 +148,7 @@
             <!-- CATEGORIES SECTION-->
             <section class="pt-5 " i data-aos="zoom-in-down">
                 <header class="text-center">
-                    <p class="small text-muted small text-uppercase mb-1">Refine seu visual com nossos ternos exclusivos.</p>
+
                     <h2 class="h5 text-uppercase mb-4">Categorias</h2>
                 </header>
                 <div class="row" id="lista-categ">
@@ -186,6 +170,10 @@
 
 
                 </div>
+
+                <a class="btn btn-dark zoom" style="margin:0 auto;margin-top: 20px;margin-left: 0;width: 100%;height: 60px;display: flex;justify-content: center;
+                    align-items: center;" href="./shop.html">Ver Mais Produtos</a>
+
             </section>
 
             <!--CLIENTES-->
@@ -263,6 +251,9 @@
                 $("#preloader").css("visibility", "hidden").fadeOut();
             }, 500);
         });
+    </script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
     </script>
 </body>
 

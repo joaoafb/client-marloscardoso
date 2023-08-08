@@ -9,13 +9,13 @@
     <meta name="description" content="Loja de moda masculina premium com uma ampla seleção de trajes, sapatos, calças, camisas e gravatas. Encontre produtos de luxo e algumas marcas próprias exclusivas.">
     <meta name="keywords" content="Marlos Cardoso, moda masculina, roupas masculinas, moda premium, trajes, sapatos masculinos, calças, camisas, gravatas">
     <meta name="author" content="Marlos Cardoso">
-    <link rel="canonical" href="http://www.marloscardoso.com/">
+    <link rel="canonical" href="https://www.marloscardoso.com/">
     <meta property="og:title" content="Marlos Cardoso - Moda Masculina Premium">
     <meta property="og:description" content="Loja de moda masculina premium com uma ampla seleção de trajes, sapatos, calças, camisas e gravatas. Encontre produtos de luxo e algumas marcas próprias exclusivas.">
     <meta property="og:image" content="https://192.168.1.105/img/logopng.png">
-    <meta property="og:url" content="http://www.marloscardoso.com/">
+    <meta property="og:url" content="https://www.marloscardoso.com/">
     <meta property="og:type" content="website">
-
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
 
     <!-- Google fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap">
@@ -33,48 +33,67 @@
 </head>
 
 <body>
-    <div class="page-holder">
+
+    <nav class="fullscreen-menu ">
+
+        <li class="nav-item">
+            <!-- Link--><a class="nav-link active" href="./index.html"><i class="fas fa-home me-1 text-gray"></i>Home</a>
+        </li>
+        <li class="nav-item">
+            <!-- Link--><a class="nav-link" href="/shop.html"><i class="fas fa-store me-1 text-gray"></i>Catálogo</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./pedidos.html"> <i class="fas fa-list me-1 text-gray"></i>Pedidos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./cart.html"> <i class="fas fa-dolly-flatbed me-1 text-gray"></i>Carrinho</a>
+        </li>
+
+        <li class="nav-item" id="btnlogin">
+            <a class="nav-link" href="./login.html"> <i class="fas fa-user me-1 text-gray fw-normal"></i>Entrar</a>
+        </li>
+        <li class="nav-item" id="btnsair" onclick="deslogar()">
+            <a class="nav-link" href="#deslogando"> <i class="fas fa-power-off text-gray"></i>Deslogar</a>
+        </li>
+
+        <button onclick="closemenu()" class="btn btn-dark zoom" style="background-color: white;color: black;margin-left: 0;width: 150px;height: 50px;display: flex;justify-content: center;
+        align-items: center;" href="./shop.html"><i class="lni lni-close" style="padding-right: 10px;"></i>Voltar</button>
+
+
+    </nav>
+
+    <div class="page-holder bg-light">
         <!-- navbar-->
         <header class="header bg-white">
-            <div class="container px-lg-3">
-                <nav class="navbar navbar-expand-lg navbar-light py-3 px-lg-0">
-                    <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto">
-
-                            <li class="nav-item">
-                                <span class="fw-bold text-uppercase text-dark" style="font-size: 16pt;">Marlos Cardoso</span>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="https://www.instagram.com/marloscard/" target="_blank" class="nav-link"><i class="lni lni-instagram"></i>@marloscard</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://wa.me/5574988274544" target="_blank" class="nav-link"><i class="lni lni-whatsapp"></i>(74) 98827-4544</a>
-                            </li>
+            <div id="nav">
+                <li class="nav-item" style="display: flex;flex-direction: row;justify-content: center;align-items: center !important;">
+                    <img src="./img/logopng.png" width="35px" alt="">
+                    <span class="fw-bold text-uppercase text-black" style="font-size: 16pt;padding-left: 10px;padding-top: 5px;">Marlos Cardoso</span>
+                </li>
 
 
 
-                        </ul>
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <!-- Link--><a class="nav-link " href="./index.html"><i class="fas fa-home me-1 text-gray"></i>Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <!-- Link--><a class="nav-link active" href="./shop.html"><i class="fas fa-store me-1 text-gray"></i>Catálogo</a>
-                            </li>
+                <button onclick="menushow()" id="btnMenu" class="btn btn-dark zoom" style="border: 1px solid white;right: 50px !important;position: absolute;cursor: pointer;width: 50px;height: 50px;display: flex;justify-content: center;
+                    align-items: center;" href="./shop.html"><i class="lni lni-list" ></i></button>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="./cart.html"> <i class="fas fa-dolly-flatbed me-1 text-gray"></i>Carrinho</a>
-                            </li>
-
-
-                        </ul>
-                    </div>
-                </nav>
             </div>
         </header>
-        <div class="modal fade" id="productView" tabindex="-1">
+        <script>
+            function menushow() {
+                document.querySelector(".fullscreen-menu").classList.add("active")
+                document.querySelector("#nav").style.display = 'none'
+            }
+
+            function closemenu() {
+                document.querySelector(".fullscreen-menu").classList.remove("active")
+                setTimeout(() => {
+                    document.querySelector("#nav").style.display = 'flex'
+                }, 1000);
+            }
+        </script>
+
+
+        <div style="margin-top: 100px;" class="modal fade" id="productView" tabindex="-1">
             <div class="modal-dialog modal-lg modal-dialog-centered">
                 <div class="modal-content overflow-hidden border-0">
                     <button class="btn-close p-4 position-absolute top-0 end-0 z-index-20 shadow-0" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -171,7 +190,7 @@
                                 <p class="small text-muted mb-0">&copy; 2023 Todos os direitos reservados.</p>
                             </div>
                             <div class="col-md-6 text-center text-md-end">
-                                <p class="small text-muted mb-0">Sistema Completo Criador por <a class="text-white reset-anchor" target="_blank" href="http://geniusleap.tech">Genius Leap</a></p>
+                                <p class="small text-muted mb-0">Sistema Completo Criador por <a class="text-white reset-anchor" target="_blank" href="https://geniusleap.tech">Genius Leap</a></p>
                                 <!-- If you want to remove the backlink, please purchase the Attribution-Free License. See details in readme.txt or license.txt. Thanks!-->
                             </div>
                         </div>

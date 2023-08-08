@@ -83,7 +83,6 @@ async function sendData(data) {
 
 
 
-
 async function sendDataCadastro(dados) {
     try {
         const response = await fetch("https://api.geniusleap.cloud/api/marloscardoso/cadastrocliente", {

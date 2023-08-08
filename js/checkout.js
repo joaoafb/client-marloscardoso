@@ -53,9 +53,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
-
-
         // Usando o método .append() para adicionar elementos à lista
         $(document).ready(function() {
             // Cria a estrutura HTML

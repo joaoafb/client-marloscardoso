@@ -1,4 +1,22 @@
 document.addEventListener("DOMContentLoaded", function() {
+    if (localStorage.getItem("token") && localStorage.getItem("token").trim() !== '') {
+        document.querySelector("#btnlogin").style.display = 'none'
+        document.querySelector("#btnsair").style.display = 'block'
+    } else {
+
+        document.querySelector("#btnlogin").style.display = 'block'
+        document.querySelector("#btnsair").style.display = 'none'
+    }
+})
+
+// Função para realizar o logout (limpar o token do sessionStorage e localStorage)
+function deslogar() {
+    sessionStorage.removeItem("token");
+    localStorage.removeItem("token");
+    console.log("Usuário deslogado.");
+    location.href = '/index.html'
+}
+document.addEventListener("DOMContentLoaded", function() {
     fetch(`https://api.geniusleap.cloud/api/marloscardoso/listapedidosuser?cpf=${localStorage.getItem("usercpf")}`)
         .then(response => response.json())
         .then(data => {

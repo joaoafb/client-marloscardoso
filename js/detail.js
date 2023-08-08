@@ -51,7 +51,13 @@ function loadpage() {
                             const savedData = JSON.parse(localStorage.getItem('Cart')) || [];
 
                             // Definir o objeto JSON a ser salvo
-                            const jsonData = { image: produto.img, title: produto.titulo, price: produto.valor, frete: localStorage.getItem("valorfrete"), token: produto._id };
+                            const jsonData = {
+                                image: produto.img,
+                                title: produto.titulo,
+                                price: produto.valor,
+                                frete: localStorage.getItem("valorfrete"),
+                                token: produto._id
+                            };
 
                             // Adicionar o novo objeto JSON ao array
                             savedData.push(jsonData);
@@ -181,9 +187,6 @@ function loadpage() {
                             const valorFrete = parseFloat(localStorage.getItem("valorfrete"));
                             const valorFreteRounded = Math.round(valorFrete);
                             localStorage.setItem("valorfrete", valorFreteRounded)
-
-
-
 
 
 
