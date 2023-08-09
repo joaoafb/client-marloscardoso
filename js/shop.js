@@ -7,7 +7,10 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector("#btnlogin").style.display = 'block'
         document.querySelector("#btnsair").style.display = 'none'
     }
+
+
 })
+
 
 // Função para realizar o logout (limpar o token do sessionStorage e localStorage)
 function deslogar() {
@@ -79,7 +82,30 @@ function products() {
         });
 
     categorias()
+    setTimeout(() => {
+        search()
+    }, 2000);
 
+
+}
+
+function search() {
+    const searchInput = document.getElementById('search');
+    const items = document.querySelectorAll('.product'); // Alteração: nome da constante
+
+    searchInput.addEventListener('input', function() {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+
+        items.forEach(item => { // Alteração: nome da constante
+            const productName = item.querySelector('h6 a').textContent.toLowerCase(); // Alteração: nome da constante
+
+            if (productName.includes(searchTerm)) {
+                item.style.display = 'block'; // Alteração: nome da constante
+            } else {
+                item.style.display = 'none'; // Alteração: nome da constante
+            }
+        });
+    });
 }
 
 function categorias() {

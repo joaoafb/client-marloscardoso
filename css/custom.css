@@ -15,7 +15,12 @@
 }
 
 body {
+    user-select: none !important;
     padding: 10px;
+}
+
+html {
+    scroll-behavior: smooth !important;
 }
 
 #btnVoltar {
@@ -768,7 +773,7 @@ tr:nth-child(even) {
 
 #nav {
     position: fixed;
-    top: 40px;
+    top: 10px;
     left: 50%;
     transition: .2s ease-in-out !important;
     transform: translateX(-50%);
@@ -782,7 +787,6 @@ tr:nth-child(even) {
     border-radius: 10px;
     padding-left: 20px;
     padding-right: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes cart {
@@ -846,13 +850,6 @@ body .twitter svg {
 
 
 /* Fullscreen menu styles */
-
-.fullscreen-menu ul {
-    padding-bottom: 25px !important;
-    border: 1px solid gray;
-    border-radius: 10px;
-    padding: 20px;
-}
 
 .fullscreen-menu ul button {
     margin: 0 auto !important;
@@ -920,16 +917,25 @@ body .twitter svg {
     z-index: 1;
 }
 
+.filter button {
+    background-color: black;
+    color: white;
+    width: 70px;
+    border-radius: 8px;
+    outline: none;
+    border: 0;
+    margin-left: 10px;
+}
+
 #categorias {
     width: auto;
-    margin: 0 auto;
-    justify-content: center;
+    margin-top: 10px;
+    justify-content: start;
     height: auto;
     padding: 10px;
     border-radius: 10px;
     background-color: white;
     box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
-    display: flex;
     flex-wrap: wrap;
 }
 
@@ -948,4 +954,21 @@ body .twitter svg {
     color: black;
     border: 1px solid black;
     transition: .2s ease-in-out;
+}
+
+#banner {
+    animation: banner infinite ease-in-out;
+    transition: .1s ease-in-out;
+}
+
+@keyframes banner {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
 }

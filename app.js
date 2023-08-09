@@ -20,9 +20,12 @@ function deslogar() {
 document.addEventListener("DOMContentLoaded", function() {
     if (localStorage.getItem("token") && localStorage.getItem("token").trim() !== '') {
         document.querySelector("#btnlogin").style.display = 'none'
+        document.querySelector("#buttonLogin").style.display = 'none'
         document.querySelector("#btnsair").style.display = 'block'
+        document.querySelector("#buttonPedidos").style.display = 'block'
     } else {
-
+        document.querySelector("#buttonPedidos").style.display = 'none'
+        document.querySelector("#buttonLogin").style.display = 'block'
         document.querySelector("#btnlogin").style.display = 'block'
         document.querySelector("#btnsair").style.display = 'none'
     }

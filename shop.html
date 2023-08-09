@@ -128,14 +128,27 @@
                     <div class="row px-4 px-lg-5 py-lg-4 align-items-center">
                         <div class="col-lg-6">
                             <h1 class="h2 text-uppercase mb-0">Catálogo</h1>
+
                         </div>
 
                     </div>
                 </div>
             </section>
-            <div id="categorias">
+            <div class="filter" style="display: flex;
+            flex-direction: row;">
+                <br>
+                <input type="text" id="search" class="form form-control" placeholder="Pesquise produtos aqui">
+                <button onclick="cat()">Filtro</button>
+                <script>
+                    function cat() {
+                        document.getElementById("categorias").style.display = 'flex'
+                    }
+                </script>
+            </div>
+            <div style="display: none;" id="categorias">
 
             </div>
+
             <section class="py-5">
                 <div class="container p-0">
                     <div class="row">
