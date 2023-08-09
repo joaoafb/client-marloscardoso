@@ -1,4 +1,11 @@
 function loadpage() {
+    Swal.fire({
+        showConfirmButton: false,
+        title: 'Carregando...',
+        onBeforeOpen: () => {
+            Swal.showLoading();
+        }
+    });
     localStorage.setItem("valorfrete", 0)
 
     const hash = window.location.hash.substring(1);
@@ -6,6 +13,7 @@ function loadpage() {
     fetch('https://api.geniusleap.cloud/api/marloscardoso/listprodutos')
         .then(response => response.json())
         .then(data => {
+            Swal.close(); // Fecha o modal de carregamento
             data.forEach(item => {
                 if (item.titulo == decodedHash) {
                     // Ajustar o acesso correto às propriedades do item
@@ -213,6 +221,7 @@ function loadpage() {
                 .catch(error => {
                     console.error("Erro ao calcular frete:", error);
                 });
+
         } else {
             Swal.fire({
 

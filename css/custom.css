@@ -150,7 +150,6 @@ section {
 /* Estilos para o resultado do frete */
 
 .resultfrete {
-    border: 1px solid rgba(128, 128, 128, 0.252);
     display: flex;
     cursor: pointer;
     padding: 5px;
@@ -205,8 +204,8 @@ section {
 
 #list-products .img-fluid {
     width: 150px;
+    border-radius: 20px;
     height: 250px;
-    object-fit: contain !important;
 }
 
 .img-fluid:hover {
@@ -576,9 +575,15 @@ tr:nth-child(even) {
         margin: 0 auto;
         margin-top: 5px !important;
     }
+    .ps-0.py-3.border-light {
+        display: none !important;
+    }
 }
 
 @media screen and (max-width: 767px) {
+    .ps-0.py-3.border-light {
+        display: none !important;
+    }
     /* Adicione seus estilos para celulares aqui */
     #button {
         /* Defina o posicionamento fixo */
@@ -758,7 +763,6 @@ tr:nth-child(even) {
 }
 
 .form-control {
-    width: 100vw !important;
     padding-left: 20px !important;
 }
 
@@ -843,6 +847,17 @@ body .twitter svg {
 
 /* Fullscreen menu styles */
 
+.fullscreen-menu ul {
+    padding-bottom: 25px !important;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.fullscreen-menu ul button {
+    margin: 0 auto !important;
+}
+
 .fullscreen-menu {
     position: fixed;
     text-decoration: none;
@@ -903,4 +918,34 @@ body .twitter svg {
     font-size: 24px;
     cursor: pointer;
     z-index: 1;
+}
+
+#categorias {
+    width: auto;
+    margin: 0 auto;
+    justify-content: center;
+    height: auto;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#categorias button {
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    transition: .2s ease-in-out;
+    border: 1px solid black;
+}
+
+#categorias button:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    transition: .2s ease-in-out;
 }

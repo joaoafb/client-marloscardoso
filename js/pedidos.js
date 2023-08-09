@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
     fetch(`https://api.geniusleap.cloud/api/marloscardoso/listapedidosuser?cpf=${localStorage.getItem("usercpf")}`)
         .then(response => response.json())
         .then(data => {
-
+            data.reverse();
 
             data.forEach(item => {
 

@@ -43,31 +43,31 @@
 
 <body>
     <nav class="fullscreen-menu ">
+        <ul>
+            <li class="nav-item">
+                <!-- Link--><a class="nav-link active" href="./index.html"><i class="fas fa-home me-1 text-gray"></i>Home</a>
+            </li>
+            <li class="nav-item">
+                <!-- Link--><a class="nav-link" href="/shop.html"><i class="fas fa-store me-1 text-gray"></i>Catálogo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./pedidos.html"> <i class="fas fa-list me-1 text-gray"></i>Pedidos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./cart.html"> <i class="fas fa-dolly-flatbed me-1 text-gray"></i>Carrinho</a>
+            </li>
 
-        <li class="nav-item">
-            <!-- Link--><a class="nav-link active" href="./index.html"><i class="fas fa-home me-1 text-gray"></i>Home</a>
-        </li>
-        <li class="nav-item">
-            <!-- Link--><a class="nav-link" href="/shop.html"><i class="fas fa-store me-1 text-gray"></i>Catálogo</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./pedidos.html"> <i class="fas fa-list me-1 text-gray"></i>Pedidos</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./cart.html"> <i class="fas fa-dolly-flatbed me-1 text-gray"></i>Carrinho</a>
-        </li>
+            <li class="nav-item" id="btnlogin">
+                <a class="nav-link" href="./login.html"> <i class="fas fa-user me-1 text-gray fw-normal"></i>Entrar</a>
+            </li>
+            <li class="nav-item" id="btnsair" onclick="deslogar()">
+                <a class="nav-link" href="#deslogando"> <i class="fas fa-power-off text-gray"></i>Deslogar</a>
+            </li>
 
-        <li class="nav-item" id="btnlogin">
-            <a class="nav-link" href="./login.html"> <i class="fas fa-user me-1 text-gray fw-normal"></i>Entrar</a>
-        </li>
-        <li class="nav-item" id="btnsair" onclick="deslogar()">
-            <a class="nav-link" href="#deslogando"> <i class="fas fa-power-off text-gray"></i>Deslogar</a>
-        </li>
+            <button onclick="closemenu()" class="btn btn-dark zoom" style="background-color: white;color: black;margin-left: 0;width: 150px;height: 50px;display: flex;justify-content: center;
+        align-items: center;" href="./shop.html">Voltar</button>
 
-        <button onclick="closemenu()" class="btn btn-dark zoom" style="background-color: white;color: black;margin-left: 0;width: 150px;height: 50px;display: flex;justify-content: center;
-        align-items: center;" href="./shop.html"><i class="lni lni-close" style="padding-right: 10px;"></i>Voltar</button>
-
-
+        </ul>
     </nav>
 
 
@@ -216,14 +216,16 @@
                         </ul>
                     </div>
                 </div>
+                <img width="300px" src="https://www.lucasnaves.com.br/wp-content/uploads/2019/08/compra-Segura-vetor-branco1-1.png" alt="">
+
                 <div class="border-top pt-4" style="border-color: #1d1d1d !important">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start">
                             <p class="small text-muted mb-0">&copy; 2023 Todos os direitos reservados.</p>
                         </div>
+
                         <div class="col-md-6 text-center text-md-end">
                             <p class="small text-muted mb-0">Sistema Completo Criador por <a class="text-white reset-anchor" target="_blank" href="https://geniusleap.tech">Genius Leap</a></p>
-
                         </div>
                     </div>
                 </div>

@@ -55,7 +55,7 @@ function products() {
                                         $('<ul>').addClass('mb-0 list-inline').append(
 
 
-                                            $('<li>').addClass('list-inline-item me-0').on('click', productview).append(
+                                            $('<li>').addClass('list-inline-item me-0').append(
                                                 $('<a>').addClass('btn btn-sm btn-outline-dark').attr('href', '#productView').attr('data-bs-toggle', 'modal').append(
                                                     $('<i>').addClass('fas fa-expand')
                                                 )
@@ -73,17 +73,85 @@ function products() {
                 });
 
                 // Função chamada quando o item é clicado
-                function productview() {
-                    document.querySelector("#product-title").innerHTML = produto.titulo
-                    document.querySelector("#product-description").innerHTML = produto.descricao
-                    document.querySelector("#product-price").innerHTML = 'R$' + produto.valor
-                    $('#product-image').css('background-image', 'url(' + produto.img + ')');
 
-                }
 
             });
         });
 
+    categorias()
+
+}
+
+function categorias() {
+    fetch('https://api.geniusleap.cloud/api/marloscardoso/listcategorias')
+        .then(response => response.json())
+        .then(data => {
+
+            data.forEach(item => {
+                const div = document.querySelector("#categorias")
+                const button = document.createElement("button")
+                button.textContent = item.titulo
+                button.onclick = function() {
+                    productCat(item.titulo)
+                }
+
+                div.append(button)
 
 
+
+
+            })
+        })
+}
+
+
+
+
+function productCat(categoriaa) {
+    Swal.fire({
+        showConfirmButton: false,
+        title: 'Carregando...',
+        onBeforeOpen: () => {
+            Swal.showLoading();
+        }
+    });
+
+    fetch('https://api.geniusleap.cloud/api/marloscardoso/listprodutos')
+        .then(response => response.json())
+        .then(data => {
+            Swal.close(); // Fecha o modal de carregamento
+
+            const listProducts = document.querySelector("#list-products");
+            listProducts.innerHTML = '';
+
+            let hasProducts = false;
+
+            data.forEach(item => {
+                if (item.categoria === categoriaa) {
+                    hasProducts = true;
+                    const produto = item;
+
+                    const productItem = document.createElement('div');
+
+                    productItem.classList.add('col-xl-3', 'col-lg-4', 'col-sm-6');
+                    productItem.innerHTML = `
+                        <div class="product text-center">
+                            <div class="position-relative mb-3">
+                                <a class="d-block" href="detail.html#${produto.titulo}">
+                                    <img class="img-fluid w-100" src="${produto.img}" alt="${produto.titulo}">
+                                </a>
+                               
+                            </div>
+                            <h6><a class="reset-anchor" href="detail.html#${produto.titulo}">${produto.titulo}</a></h6>
+                            <p class="small text-muted">R$${produto.valor}</p>
+                        </div>
+                    `;
+                    listProducts.appendChild(productItem);
+                }
+            });
+
+            if (!hasProducts) {
+                listProducts.innerHTML = '<p>Não foram encontrados produtos nesta categoria.</p>';
+            }
+        });
 }
