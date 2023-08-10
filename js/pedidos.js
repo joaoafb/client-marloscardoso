@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     cardBodyDiv.append(cardTitle)
 
                 })
-                var cardText1 = $('<p>').addClass('card-text').text('Código do Pedido: +' + item.token);
+                var cardText1 = $('<p>').addClass('card-text').text('Código do Pedido: ' + item.token);
                 var cardText2 = $('<p>').addClass('card-text').text('Status: ' + item.status);
                 if (item.status == 'Pedido Postado') {
 

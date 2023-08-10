@@ -90,6 +90,24 @@ section {
     transform: scale(1.1);
 }
 
+#buttonPedidos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 60px;
+    z-index: 9999;
+    height: 60px;
+    position: fixed !important;
+    bottom: 10px !important;
+    right: 5px !important;
+    border-radius: 50%;
+}
+
+#buttonPedidos i {
+    transform: scale(1.3);
+}
+
 
 /* Estilos para os botões frete e luxo */
 
@@ -175,6 +193,10 @@ section {
     margin-right: 10px;
     margin-left: 10px;
     transform: scale(1.5);
+}
+
+#btnMenu {
+    border-radius: 50%;
 }
 
 
@@ -885,7 +907,7 @@ body .twitter svg {
 .fullscreen-menu ul {
     list-style: none;
     padding: 0;
-    text-align: center;
+    text-align: left;
 }
 
 .fullscreen-menu li {
