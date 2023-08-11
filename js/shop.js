@@ -54,17 +54,7 @@ function products() {
                                     $('<a>').addClass('d-block').attr('href', 'detail.html#' + produto.titulo).append(
                                         $('<img>').addClass('img-fluid w-100').attr('src', productImageSrc).attr('alt', '...')
                                     ),
-                                    $('<div>').addClass('product-overlay').append(
-                                        $('<ul>').addClass('mb-0 list-inline').append(
 
-
-                                            $('<li>').addClass('list-inline-item me-0').append(
-                                                $('<a>').addClass('btn btn-sm btn-outline-dark').attr('href', '#productView').attr('data-bs-toggle', 'modal').append(
-                                                    $('<i>').addClass('fas fa-expand')
-                                                )
-                                            )
-                                        )
-                                    )
                                 ),
                                 $('<h6>').append(
                                     $('<a>').addClass('reset-anchor').attr('href', 'detail.html#' + produto.titulo).text(productName)
