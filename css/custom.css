@@ -523,6 +523,11 @@ tr:nth-child(even) {
     flex-wrap: wrap;
 }
 
+#lista-categ div {
+    background-color: transparent !important;
+    border: 1px solid rgb(223, 223, 223);
+}
+
 .cardcat {
     cursor: pointer;
     background-color: #f2f2f2;
@@ -651,6 +656,10 @@ tr:nth-child(even) {
     #nav span {
         font-size: 15pt !important;
     }
+}
+
+#list-products div {
+    margin: 5px;
 }
 
 
@@ -1013,4 +1022,6 @@ footer {
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
     margin: 0 auto;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
 }

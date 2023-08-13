@@ -1,3 +1,9 @@
+Swal.fire({
+    title: 'Bem-Vindo à Loja Marlos Cardoso!',
+    text: 'Seja muito bem-vindo e obrigado por escolher nossa loja.',
+    icon: 'info',
+    confirmButtonText: 'Fechar'
+  });
 function menushow() {
     document.querySelector(".fullscreen-menu").classList.add("active")
     document.querySelector("#nav").style.display = 'none'
