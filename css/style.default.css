@@ -11277,7 +11277,7 @@ button:active {
 */
 
 .product img {
-    filter: grayscale(40%);
+  
     transition: all 0.3s;
 }
 

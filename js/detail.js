@@ -41,66 +41,69 @@ function loadpage() {
 
                     btn.innerText = "Adicionar ao carrinho R$" + Number(sessionStorage.getItem("valorproduto"))
                     btn.onclick = function() {
-                        // Suponha que você tenha uma array chamada "carrinho"
-                        var carrinho = produto;
+                        btn.innerHTML = 'Aguarde...'
+                      setTimeout(() => {
+                          // Suponha que você tenha uma array chamada "carrinho"
+                          var carrinho = produto;
 
-                        // Converte a array em uma string JSON
-                        var carrinhoString = JSON.stringify(carrinho);
-
-                        // Salva a string no LocalStorage com a chave "carrinho"
-                        localStorage.setItem('carrinho', carrinhoString);
-
-
-                        const indice = Number(localStorage.getItem("indice"))
-                        localStorage.setItem("indice", indice + 1)
-                            // Verificar se o localStorage está disponível no navegador
-                        if (typeof localStorage !== 'undefined') {
-                            // Obter os dados salvos no localStorage (se houver)
-                            const savedData = JSON.parse(localStorage.getItem('Cart')) || [];
-
-                            // Definir o objeto JSON a ser salvo
-                            const jsonData = {
-                                image: produto.img,
-                                title: produto.titulo,
-                                price: produto.valor,
-                                frete: localStorage.getItem("valorfrete"),
-                                token: produto._id
-                            };
-
-                            // Adicionar o novo objeto JSON ao array
-                            savedData.push(jsonData);
-
-                            // Salvar o array atualizado no localStorage
-                            localStorage.setItem('Cart', JSON.stringify(savedData));
-
-                            // Exibir o array atualizado no console
-                            console.log(savedData);
-                        } else {
-                            console.log('O localStorage não é suportado neste navegador.');
-                        }
-
-
-                        let timerInterval
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Adicionado No Carrinho Com Sucesso!',
-                            html: 'Redirecionando ao carrinho...',
-                            timer: 2000,
-                            timerProgressBar: true,
-                            didOpen: () => {
-                                Swal.showLoading()
-                                const b = Swal.getHtmlContainer().querySelector('b')
-
-                            },
-                            willClose: () => {
-                                clearInterval(timerInterval)
-                            }
-                        }).then((result) => {
-                            /* Read more about handling dismissals below */
-                            if (result.dismiss === Swal.DismissReason.timer) {
-                                location.href = './cart.html'
-                            }
-                        })
+                          // Converte a array em uma string JSON
+                          var carrinhoString = JSON.stringify(carrinho);
+  
+                          // Salva a string no LocalStorage com a chave "carrinho"
+                          localStorage.setItem('carrinho', carrinhoString);
+  
+  
+                          const indice = Number(localStorage.getItem("indice"))
+                          localStorage.setItem("indice", indice + 1)
+                              // Verificar se o localStorage está disponível no navegador
+                          if (typeof localStorage !== 'undefined') {
+                              // Obter os dados salvos no localStorage (se houver)
+                              const savedData = JSON.parse(localStorage.getItem('Cart')) || [];
+  
+                              // Definir o objeto JSON a ser salvo
+                              const jsonData = {
+                                  image: produto.img,
+                                  title: produto.titulo,
+                                  price: produto.valor,
+                                  frete: localStorage.getItem("valorfrete"),
+                                  token: produto._id
+                              };
+  
+                              // Adicionar o novo objeto JSON ao array
+                              savedData.push(jsonData);
+  
+                              // Salvar o array atualizado no localStorage
+                              localStorage.setItem('Cart', JSON.stringify(savedData));
+  
+                              // Exibir o array atualizado no console
+                              console.log(savedData);
+                          } else {
+                              console.log('O localStorage não é suportado neste navegador.');
+                          }
+  
+  
+                          let timerInterval
+                          Swal.fire({
+                              icon: 'success',
+                              title: 'Adicionado No Carrinho Com Sucesso!',
+                              html: 'Redirecionando ao carrinho...',
+                              timer: 2000,
+                              timerProgressBar: true,
+                              didOpen: () => {
+                                  Swal.showLoading()
+                                  const b = Swal.getHtmlContainer().querySelector('b')
+  
+                              },
+                              willClose: () => {
+                                  clearInterval(timerInterval)
+                              }
+                          }).then((result) => {
+                              /* Read more about handling dismissals below */
+                              if (result.dismiss === Swal.DismissReason.timer) {
+                                  location.href = './cart.html'
+                              }
+                          })
+                      }, 1000);
                     };
 
                     const btnback = document.createElement("button")

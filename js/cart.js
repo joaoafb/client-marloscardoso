@@ -36,8 +36,12 @@ function checkout() {
             }
         })
     } else {
-
-        login()
+        document.querySelector("#btnComprar").disabled = true
+        document.querySelector("#btnComprar").innerHTML = 'Aguarde...'
+       
+        setTimeout(() => {
+            login()
+        }, 1500);
     }
 }
 

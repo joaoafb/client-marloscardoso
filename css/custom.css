@@ -546,9 +546,7 @@ tr:nth-child(even) {
     #buttonLogin {
         display: none !important;
     }
-    #list-products .img-fluid {
-        width: 80% !important;
-    }
+  
     #nav span {
         text-align: left;
         width: 50%;
@@ -618,9 +616,7 @@ tr:nth-child(even) {
     #buttonLogin {
         display: none !important;
     }
-    #list-products .img-fluid {
-        width: 80% !important;
-    }
+   
     .ps-0.py-3.border-light {
         display: none !important;
     }
@@ -670,9 +666,7 @@ tr:nth-child(even) {
         background-color: white !important;
         background-image: none !important;
     }
-    #list-products .img-fluid {
-        width: 80% !important;
-    }
+   
     /* Adicione seus estilos para tablets aqui */
     #button {
         height: 60px !important;
@@ -1025,3 +1019,4 @@ footer {
     padding-left: 10px !important;
     padding-right: 10px !important;
 }
+

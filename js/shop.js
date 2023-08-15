@@ -52,7 +52,7 @@ function products() {
                                 $('<div>').addClass('position-relative mb-3').append(
                                     $('<div>').addClass('badge text-white bg-'),
                                     $('<a>').addClass('d-block').attr('href', 'detail.html#' + produto.titulo).append(
-                                        $('<img>').addClass('img-fluid w-100').attr('src', productImageSrc).attr('alt', '...')
+                                        $('<img>').addClass('img-fluid ').attr('src', productImageSrc).attr('alt', '...')
                                     ),
 
                                 ),
@@ -154,7 +154,7 @@ function productCat(categoriaa) {
                         <div class="product text-center">
                             <div class="position-relative mb-3">
                                 <a class="d-block" href="detail.html#${produto.titulo}">
-                                    <img class="img-fluid w-100" src="${produto.img}" alt="${produto.titulo}">
+                                    <img class="img-fluid" src="${produto.img}" alt="${produto.titulo}">
                                 </a>
                                
                             </div>

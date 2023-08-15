@@ -116,6 +116,7 @@ document.addEventListener("DOMContentLoaded", function() {
 document.getElementById('firstName').value = localStorage.getItem("userstore")
 document.querySelector("#form").addEventListener("submit", function(event) {
         event.preventDefault()
+        document.querySelector("#btnComprar").innerHTML = 'Aguarde...'
         document.querySelector("#btnComprar").disabled = true
 
         const firstNameInput = document.getElementById('firstName').value
@@ -166,6 +167,7 @@ document.querySelector("#form").addEventListener("submit", function(event) {
             cpf,
             stateInput,
             obs,
+            meio:'loja',
             token: tokenp,
             pricetotal: sessionStorage.getItem("pricetotal"),
             status: 'Aguardando Pagamento',
