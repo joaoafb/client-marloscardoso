@@ -80,7 +80,7 @@ fetch('https://api.geniusleap.cloud/api/marloscardoso/listprodutos')
                         $('<div>').addClass('position-relative mb-3').append(
                             $('<div>').addClass('badge text-white bg-'),
                             $('<a>').addClass('d-block').attr('href', 'detail.html#' + productName).append(
-                                $('<img>').addClass('img-fluid w-100').attr('src', productImageSrc).attr('alt', '...')
+                                $('<img>').addClass('img-fluid').attr('src', productImageSrc).attr('alt', '...')
                             ),
                             $('<div>').addClass('product-overlay').append(
                                 $('<ul>').addClass('mb-0 list-inline').append(
