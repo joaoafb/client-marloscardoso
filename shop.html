@@ -66,18 +66,18 @@
     <div class="page-holder bg-light">
         <!-- navbar-->
         <header class="header bg-white">
-            <div id="nav">
-                <li class="nav-item" style="display: flex;flex-direction: row;justify-content: center;align-items: center !important;">
+            <div id="nav" style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+                <div style="display: flex; align-items: center;">
                     <img src="./img/logopng.png" width="35px" alt="">
-                    <span class="fw-bold text-uppercase text-black" style="font-size: 16pt;padding-left: 10px;padding-top: 5px;">Marlos Cardoso</span>
-                </li>
-
-
-
-                <button onclick="menushow()" id="btnMenu" class="btn btn-dark zoom" style="border: 1px solid white;right: 50px !important;position: absolute;cursor: pointer;width: 50px;height: 50px;display: flex;justify-content: center;
-                    align-items: center;" href="./shop.html"><i class="lni lni-list" ></i></button>
-
+                    <span class="fw-bold text-uppercase text-black" style="font-size: 16pt; padding-left: 10px;">Marlos Cardoso</span>
+                </div>
+                
+                <div>
+                    <button onclick="location.href = 'login.html'" id="buttonLogin" class="btn btn-dark zoom" style="height: 50px;"><i class="lni lni-user" style="padding-right: 10px;"></i>Entrar</button>
+                    <button onclick="menushow()" id="btnMenu" class="btn btn-dark zoom" style="cursor: pointer; width: 50px; height: 50px;"><i class="lni lni-list"></i></button>
+                </div>
             </div>
+            
         </header>
         <script>
             function menushow() {

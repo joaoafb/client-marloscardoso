@@ -152,7 +152,7 @@ fetch('https://api.geniusleap.cloud/api/marloscardoso/listprodutos')
                                     })
                                     .addClass('list-inline-item m-0 p-0') // Adicionar as classes ao elemento <li>
                                     .append( // Adicionar o elemento <a> como filho do elemento <li>
-                                        $('<span>').addClass('btn btn-sm btn-dark').attr('href', 'cart.html').text('Adicionar no Carrinho')
+                                        $('<span>').addClass('btn btn-sm btn-dark').attr('href', 'cart.html').text('').append($('<i>').addClass('fas fa-plus'))
                                     )
                                     .appendTo('body'),
                                     $('<li>').addClass('list-inline-item me-0').on('click', function() {

@@ -805,6 +805,17 @@ tr:nth-child(even) {
 .button.loading .cart {
     animation: cart 3.4s linear forwards 0.2s;
 }
+.plus{
+    font-size: 20pt;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+      
+}
 
 .form-control {
     padding-left: 20px !important;
@@ -821,7 +832,7 @@ tr:nth-child(even) {
     width: 90vw;
     height: 80px;
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between !important;
     align-items: center;
     border-radius: 10px;
     padding-left: 20px;
@@ -1016,7 +1027,7 @@ footer {
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
     margin: 0 auto;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
+    padding-left:30px !important;
+    padding-right: 30px !important;
 }
 
