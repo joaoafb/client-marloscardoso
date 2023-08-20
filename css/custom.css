@@ -550,9 +550,6 @@ tr:nth-child(even) {
 /* Estilos específicos para iPhone SE */
 
 @media screen and (max-width: 375px) {
-    #buttonLogin {
-        display: none !important;
-    }
     #nav span {
         text-align: left;
         width: 50%;
@@ -619,11 +616,12 @@ tr:nth-child(even) {
 }
 
 @media screen and (max-width: 767px) {
+    .flex-fill.p-3.flex.flex-row {
+        padding: 20px !important;
+        margin: 10px;
+    }
     .menu {
         display: none;
-    }
-    #buttonLogin {
-        display: none !important;
     }
     .ps-0.py-3.border-light {
         display: none !important;
@@ -677,9 +675,6 @@ tr:nth-child(even) {
     /* Adicione seus estilos para tablets aqui */
     #button {
         height: 60px !important;
-    }
-    #buttonLogin {
-        display: none !important;
     }
 }
 
