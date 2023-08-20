@@ -53,36 +53,74 @@
 </head>
 
 <body>
-    
-    <nav class="fullscreen-menu ">
-        <ul>
-            <li class="nav-item">
-                <!-- Link--><a class="nav-link active" href="./index.html"><i class="fas fa-home me-1 text-gray"></i>Home</a>
-            </li>
-            <li class="nav-item">
-                <!-- Link--><a class="nav-link" href="/shop.html"><i class="fas fa-store me-1 text-gray"></i>Catálogo</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./pedidos.html"> <i class="fas fa-list me-1 text-gray"></i>Pedidos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./cart.html"> <i class="fas fa-dolly-flatbed me-1 text-gray"></i>Carrinho</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://www.instagram.com/marloscard/" target="_blank"> <i class="fab fa-instagram text-gray"></i>Instagram</a>
-            </li>
 
-            <li class="nav-item" id="btnlogin">
-                <a class="nav-link" href="./login.html"> <i class="fas fa-user me-1 text-gray fw-normal"></i>Entrar</a>
-            </li>
-            <li class="nav-item" id="btnsair" onclick="deslogar()">
-                <a class="nav-link" href="#deslogando"> <i class="fas fa-power-off text-gray"></i>Deslogar</a>
-            </li>
+    <nav class="fullscreen-menu" data-aos="flip-left">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 d-flex">
+                    <div class="flex-fill  p-1 menu">
 
-            <button onclick="closemenu()" class="btn btn-dark zoom" style="background-color: white;color: black;margin-left: 0;width: 150px;height: 50px;display: flex;justify-content: center;
-        align-items: center;" href="./shop.html">Voltar</button>
 
-        </ul>
+                        <div class="box">
+                            <div class="flex flex-row h">
+                                <i class="lni lni-cart"></i>
+                                <span>Carrinho</span></div>
+                        </div>
+                        <ul id="cart">
+
+
+                        </ul>
+
+
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex">
+                    <div class="flex-fill p-3 flex flex-row">
+                        <button onclick="closemenu()" class="btn btn-close"></button><span style="padding-left: 10px;color:gray;cursor: pointer;" onclick="closemenu()">Fechar</span>
+                        <br><br>
+                        <div onclick="location.href= '/'" data-aos="fade-right" data-aos-delay="100" class="box icon-menu">
+                            <i class="lni lni-home"></i>
+                            <span>Inicio</span>
+                        </div>
+
+                        <div onclick="location.href= 'shop.html'" data-aos="fade-right" data-aos-delay="200" class="box icon-menu">
+                            <i class="lni lni-restaurant"></i>
+                            <span>Nossos Produtos</span>
+                        </div>
+
+                        <div onclick="location.href= 'pedidos.html'" data-aos="fade-right" data-aos-delay="300" class="box icon-menu">
+                            <i class="lni lni-menu"></i>
+                            <span>Seus Pedidos</span>
+                        </div>
+
+                        <div onclick="location.href= 'cart'" data-aos="fade-right" data-aos-delay="400" class="box icon-menu">
+                            <i class="lni lni-cart"></i>
+                            <span>Seu Carrinho</span>
+                        </div>
+
+                        <div onclick="location.href= 'www.instagram/marloscard'" data-aos="fade-right" data-aos-delay="500" class="box icon-menu">
+                            <i class="lni lni-instagram"></i>
+                            <span>Nosso Instagram</span>
+                        </div>
+
+                        <div onclick="location.href= ''" data-aos="fade-right" data-aos-delay="600" class="box icon-menu">
+                            <i class="lni lni-whatsapp"></i>
+                            <span>Nosso Whatsapp</span>
+                        </div>
+
+                        <div onclick="deslogar()" id="btnsair" data-aos="fade-right" data-aos-delay="700" class="box icon-menu">
+                            <i class="lni lni-power-switch"></i>
+                            <span>Deslogar</span>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </nav>
     <button onclick="location.href = 'pedidos.html'" id="buttonPedidos" class="btn btn-dark zoom" href="./cart.html"><i class="lni lni-cart" > </i></button>
 
@@ -100,13 +138,13 @@
                     <img src="./img/logopng.png" width="35px" alt="">
                     <span class="fw-bold text-uppercase text-black" style="font-size: 16pt; padding-left: 10px;">Marlos Cardoso</span>
                 </div>
-                
+
                 <div>
                     <button onclick="location.href = 'login.html'" id="buttonLogin" class="btn btn-dark zoom" style="height: 50px;"><i class="lni lni-user" style="padding-right: 10px;"></i>Entrar</button>
-                    <button onclick="menushow()" id="btnMenu" class="btn btn-dark zoom" style="cursor: pointer; width: 50px; height: 50px;"><i class="lni lni-list"></i></button>
+                    <button onclick="menushow()" id="btnMenu" class="btn btn-dark zoom" style="cursor: pointer; width: 50px; height: 50px;"><i class="lni lni-menu"></i></button>
                 </div>
             </div>
-            
+
 
 
         </header>
@@ -260,6 +298,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     </div>
     <script src="./app.js"></script>
+    <script src="./js/control.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <script>
