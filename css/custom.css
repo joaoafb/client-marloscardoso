@@ -305,7 +305,8 @@ section {
 }
 
 #lista-categ {
-    justify-content: start !important;
+    display: flex;
+    justify-content: center !important;
 }
 
 .categoria:hover {
@@ -613,6 +614,52 @@ tr:nth-child(even) {
     .ps-0.py-3.border-light {
         display: none !important;
     }
+}
+
+.card {
+    position: relative;
+    width: 150px;
+    height: 250px;
+    border-radius: 15px;
+    margin: 5px;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: .2s ease-in-out;
+    border: none !important;
+    outline: none !important;
+    cursor: pointer;
+}
+
+.card:hover {
+    transition: .2s ease-in-out;
+    transform: scale(1.03);
+}
+
+.card img {
+    width: 100%;
+    filter: brightness(0.2);
+    /* Ajuste o valor para alterar o brilho */
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    outline: none;
+    z-index: 1;
+}
+
+.title {
+    position: absolute;
+    bottom: 10px;
+    font-size: 15pt !important;
+    left: 10px;
+    color: white;
+    z-index: 2;
 }
 
 @media screen and (max-width: 767px) {

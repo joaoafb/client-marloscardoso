@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Contato </title>
+    <meta name="description" content="Loja de moda masculina premium com uma ampla seleção de trajes, sapatos, calças, camisas e gravatas. Encontre produtos de luxo e algumas marcas próprias exclusivas.">
+    <meta name="keywords" content="Marlos Cardoso, moda masculina, roupas masculinas, moda premium, trajes, sapatos masculinos, calças, camisas, gravatas">
+    <meta name="author" content="Marlos Cardoso">
+    <link rel="canonical" href="https://www.marloscardoso.com/">
+    <meta property="og:title" content="Marlos Cardoso - Moda Masculina Premium">
+    <meta property="og:description" content="Loja de moda masculina premium com uma ampla seleção de trajes, sapatos, calças, camisas e gravatas. Encontre produtos de luxo e algumas marcas próprias exclusivas.">
+    <meta property="og:image" content="https://192.168.1.105/img/logopng.png">
+    <meta property="og:url" content="https://www.marloscardoso.com/">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+
+
+    <!-- Google fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap">
+    <!-- theme stylesheet-->
+
+
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/logo.ico">
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+    <script src="./js/detail.js"></script>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+
+</head>
+
+<body>
+    <nav class="fullscreen-menu" data-aos="flip-left">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 d-flex">
+                    <div class="flex-fill  p-1 menu">
+
+
+                        <div class="box">
+                            <div class="flex flex-row h">
+                                <i class="lni lni-cart"></i>
+                                <span>Carrinho</span></div>
+                        </div>
+                        <ul id="cart">
+
+
+                        </ul>
+
+
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex">
+                    <div class="flex-fill p-3 flex flex-row">
+                        <button onclick="closemenu()" class="btn btn-close"></button><span style="padding-left: 10px;color:gray;cursor: pointer;" onclick="closemenu()">Fechar</span>
+                        <br><br>
+                        <div onclick="location.href= '/'" data-aos="fade-right" data-aos-delay="100" class="box icon-menu">
+                            <i class="lni lni-home"></i>
+                            <span>Inicio</span>
+                        </div>
+
+                        <div onclick="location.href= 'shop.html'" data-aos="fade-right" data-aos-delay="200" class="box icon-menu">
+                            <i class="lni lni-restaurant"></i>
+                            <span>Nossos Produtos</span>
+                        </div>
+
+                        <div onclick="location.href= 'pedidos.html'" data-aos="fade-right" data-aos-delay="300" class="box icon-menu">
+                            <i class="lni lni-menu"></i>
+                            <span>Seus Pedidos</span>
+                        </div>
+
+                        <div onclick="location.href= 'cart'" data-aos="fade-right" data-aos-delay="400" class="box icon-menu">
+                            <i class="lni lni-cart"></i>
+                            <span>Seu Carrinho</span>
+                        </div>
+
+                        <div onclick="location.href= 'www.instagram/marloscard'" data-aos="fade-right" data-aos-delay="500" class="box icon-menu">
+                            <i class="lni lni-instagram"></i>
+                            <span>Nosso Instagram</span>
+                        </div>
+
+                        <div onclick="location.href= ''" data-aos="fade-right" data-aos-delay="600" class="box icon-menu">
+                            <i class="lni lni-whatsapp"></i>
+                            <span>Nosso Whatsapp</span>
+                        </div>
+
+                        <div onclick="deslogar()" id="btnsair" data-aos="fade-right" data-aos-delay="700" class="box icon-menu">
+                            <i class="lni lni-power-switch"></i>
+                            <span>Deslogar</span>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-holder bg-light">
+        <!-- navbar-->
+        <header class="header ">
+            <div id="nav" style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+                <div style="display: flex; align-items: center;">
+                    <img src="./img/logopng.png" width="35px" alt="">
+                    <span class="fw-bold text-uppercase text-black" style="font-size: 16pt; padding-left: 10px;">Marlos Cardoso</span>
+                </div>
+
+                <div>
+                    <button onclick="location.href = 'login.html'" id="buttonLogin" class="btn btn-dark zoom" style="height: 50px;"><i class="lni lni-user" style="padding-right: 10px;"></i>Entrar</button>
+                    <button onclick="menushow()" id="btnMenu" class="btn btn-dark zoom" style="cursor: pointer; width: 50px; height: 50px;"><i class="lni lni-list"></i></button>
+                </div>
+            </div>
+
+        </header>
+        <script>
+            function menushow() {
+                document.querySelector(".fullscreen-menu").classList.add("active")
+                document.querySelector("#nav").style.display = 'none'
+            }
+
+            function closemenu() {
+                document.querySelector(".fullscreen-menu").classList.remove("active")
+                setTimeout(() => {
+                    document.querySelector("#nav").style.display = 'flex'
+                }, 1000);
+            }
+        </script>
+
+        <section class="py-5" style="margin-top: 100px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="bg-primary text-white p-4">
+                            <!-- Conteúdo da primeira div (lado esquerdo) -->
+                            <h3>Whatsapp</h3>
+                            <p>Marlos Cardoso - (74) 98827 - 4544</p>
+                            <p>Genius Soluções - (74) 99122-7024</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="bg-secondary text-white p-4">
+                            <!-- Conteúdo da segunda div (lado direito) -->
+                            <h3>Email</h3>
+                            <p>loja@marloscardoso.com</p>
+                            <p>empresa@geniusleap.tech</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <footer class="bg-dark text-white">
+            <div class="container py-4">
+                <div class="row py-5">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <h6 class="text-uppercase mb-3">Atendimento ao cliente</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li><a class="footer-link" href="#!">Ajuda</a></li>
+
+                            <li><a class="footer-link" href="#!">Termos &amp; Condições</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h6 class="text-uppercase mb-3">Redes Sociais</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li><a class="footer-link" href="#!">Instagram</a></li>
+
+                            <li><a class="footer-link" href="#!">Whatsapp</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <img width="300px" src="https://www.lucasnaves.com.br/wp-content/uploads/2019/08/compra-Segura-vetor-branco1-1.png" alt="">
+
+                <div class="border-top pt-4" style="border-color: #1d1d1d !important">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start">
+                            <p class="small text-muted mb-0">&copy; 2023 Todos os direitos reservados.</p>
+                        </div>
+                        <div class="col-md-6 text-cen
+                        ter text-md-end">
+                            <p class="small text-muted mb-0">Sistema Completo Criador por <a class="text-white reset-anchor" href="https://geniusleap.tech">Genius Leap</a></p>
+                            <!-- If you want to remove the backlink, please purchase the Attribution-Free License. See details in readme.txt or license.txt. Thanks!-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- JavaScript files-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+
+
+        <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    </div>
+    <script src="./js/control.js"></script>
+</body>
+
+</html>

@@ -1,62 +1,45 @@
 document.addEventListener("DOMContentLoaded", products())
 
+function getProductHtml(product) {
+    const productName = product.titulo;
+    const productPrice = `R$${product.valor}`;
+    const productImageSrc = product.img;
 
-
+    return `
+        <div class="col-xl-3 col-lg-4 col-sm-6">
+            <div class="product text-center">
+                <div class="position-relative mb-3">
+                    <div class="badge text-white bg-"></div>
+                    <a class="d-block" href="detail.html#${productName}">
+                        <img class="img-fluid" src="${productImageSrc}" alt="...">
+                    </a>
+                </div>
+                <h6>
+                    <a class="reset-anchor" href="detail.html#${productName}">${productName}</a>
+                </h6>
+                <p class="small text-muted">${productPrice}</p>
+            </div>
+        </div>
+    `;
+}
 
 function products() {
-
-
-
     fetch('https://api.geniusleap.cloud/api/marloscardoso/listprodutos')
         .then(response => response.json())
         .then(data => {
+            const productListContainer = document.querySelector("#list-products");
+            productListContainer.innerHTML = '';
 
             data.forEach(item => {
-
-
-                const produto = item
-                document.querySelector("#list-products").innerHTML = ''
-
-
-                $(document).ready(function() {
-                    // Dados a serem inseridos no HTML
-                    var productName = produto.titulo
-                    var productPrice = 'R$' + produto.valor
-                    var productImageSrc = produto.img
-
-                    // Criando o elemento HTML com os dados dinâmicos usando o método append do jQuery
-                    $('#list-products').append(
-                        $('<div>').addClass('col-xl-3 col-lg-4 col-sm-6').append(
-                            $('<div>').addClass('product text-center').append(
-                                $('<div>').addClass('position-relative mb-3').append(
-                                    $('<div>').addClass('badge text-white bg-'),
-                                    $('<a>').addClass('d-block').attr('href', 'detail.html#' + produto.titulo).append(
-                                        $('<img>').addClass('img-fluid ').attr('src', productImageSrc).attr('alt', '...')
-                                    ),
-
-                                ),
-                                $('<h6>').append(
-                                    $('<a>').addClass('reset-anchor').attr('href', 'detail.html#' + produto.titulo).text(productName)
-                                ),
-                                $('<p>').addClass('small text-muted').text(productPrice)
-                            )
-                        )
-                    );
-                });
-
-                // Função chamada quando o item é clicado
-
-
+                const productHtml = getProductHtml(item);
+                productListContainer.insertAdjacentHTML('beforeend', productHtml);
             });
         });
 
-    categorias()
-    setTimeout(() => {
-        search()
-    }, 2000);
-
-
+    categorias();
+    setTimeout(search, 2000);
 }
+
 
 function search() {
     const searchInput = document.getElementById('search');
@@ -99,7 +82,24 @@ function categorias() {
         })
 }
 
+document.addEventListener("DOMContentLoaded", function() {
 
+    // Função que será executada com o parâmetro da categoria
+
+
+    // Função para obter parâmetros da URL
+    function getParameterFromURL(parameterName) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(parameterName);
+    }
+
+    // Verificar se há um parâmetro "cat" na URL
+    const categoryParam = getParameterFromURL('cat');
+    if (categoryParam) {
+        productCat(categoryParam)
+    }
+
+})
 
 
 function productCat(categoriaa) {

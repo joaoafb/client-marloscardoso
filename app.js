@@ -1,19 +1,41 @@
+// Verifica se há algum dado no localStorage
+const dadosNoLocalStorage = localStorage.getItem('Cart'); // Substitua 'seuItemLocalStorage' pelo nome do seu item
+
+if (dadosNoLocalStorage && dadosNoLocalStorage != '[]') {
+    Swal.fire({
+        title: 'Produtos no Carrinho',
+        text: 'Você tem produtos no carrinho. Deseja ir para o carrinho?',
+        icon: 'info',
+        showCancelButton: true,
+        confirmButtonColor: '#000',
+        confirmButtonText: 'Ir para o Carrinho',
+        cancelButtonText: 'Continuar Comprando'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Redirecionar para a página cart.html
+            window.location.href = 'cart.html';
+        }
+    });
+}
+
 fetch('https://api.geniusleap.cloud/api/marloscardoso/listcategorias')
     .then(response => response.json())
     .then(data => {
 
         data.forEach(item => {
-
             const categoria = $(`
-              <div onclick="location.href = '/shop.html?id=${item.titulo}'" style="display:flex;cursor:pointer;flex-direction:row !Important;padding:10px;border-radius:10px;" class="container my-4 w-auto bg-gray-100">
-            <img src="${item.img}" style="border-radius:50%;object-fit: contain !important;" width="40px">
-            <h3 style="padding-left:10px;">${item.titulo}</h3>
-            </div>
-            
-            
-              
-              
-              `);
+  <div class="card">
+    <img src="${item.img}" alt="Imagem de Fundo">
+    <div class="overlay"></div>
+    <h2 class="title">${item.titulo}</h2>
+  </div>
+`);
+
+            categoria.click(() => {
+                window.location.href = `./shop.html?cat=${item.titulo}`;
+            });
+
+
 
 
             // Adicionando o novo item à coluna
@@ -111,10 +133,7 @@ fetch('https://api.geniusleap.cloud/api/marloscardoso/listprodutos')
                                         })
 
                                     })
-                                    .addClass('list-inline-item m-0 p-0') // Adicionar as classes ao elemento <li>
-                                    .append( // Adicionar o elemento <a> como filho do elemento <li>
-                                        $('<span>').addClass('btn btn-sm btn-dark').attr('href', 'cart.html').text('').append($('<i>').addClass('fas fa-plus'))
-                                    )
+
                                     .appendTo('body'),
                                     $('<li>').addClass('list-inline-item me-0').on('click', function() {
 
