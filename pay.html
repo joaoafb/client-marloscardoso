@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=d, initial-scale=1.0">
+    <title>Pay</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+
+<body>
+    <script>
+        // Obtém a parte da URL após o ponto de interrogação (?)
+        const queryString = window.location.search;
+
+        // Cria um objeto URLSearchParams com a parte da string de consulta da URL
+        const params = new URLSearchParams(queryString);
+
+        // Obtém o valor do parâmetro 'id' da URL
+        const id = params.get('id');
+
+        // Verifica se 'id' é diferente de null ou vazio antes de usá-lo
+        if (id) {
+
+
+            const url = 'https://192.168.1.106/api/marloscardoso/pedidos-client';
+
+            fetch(url)
+                .then(response => response.json())
+                .then(pedidos => {
+                    const pedidoEncontrado = pedidos.find(pedido => pedido.token === id);
+
+                    if (pedidoEncontrado) {
+
+                        window.location.href = pedidoEncontrado.linkPagamento
+                    } else {
+                        console.log('Nenhum pedido encontrado com o token correspondente.');
+                        Swal.fire({
+                            title: '',
+                            text: 'Algo deu errado em seu pedido.',
+                            icon: 'error',
+                            showCancelButton: true,
+                            confirmButtonText: 'Voltar à loja.',
+                            cancelButtonText: 'Fechar Página'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                // Redirecionar para outra página
+                                window.location.href = 'index.html';
+                            } else {
+                                // Fechar a página
+                                window.close();
+                            }
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro ao fazer a solicitação:', error);
+                });
+
+        } else {
+            console.log('O parâmetro "id" não foi fornecido na URL.');
+            Swal.fire({
+                title: '',
+                text: 'Algo deu errado em seu pedido.',
+                icon: 'error',
+                showCancelButton: true,
+                confirmButtonText: 'Voltar à loja.',
+                cancelButtonText: 'Fechar Página'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Redirecionar para outra página
+                    window.location.href = 'index.html';
+                } else {
+                    // Fechar a página
+                    window.close();
+                }
+            });
+        }
+    </script>
+</body>
+
+
+</html>
