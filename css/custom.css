@@ -16,7 +16,8 @@
 
 body {
     user-select: none !important;
-    padding: 10px;
+    padding: 0;
+    margin: 0;
     overflow-x: hidden;
 }
 
@@ -618,7 +619,6 @@ tr:nth-child(even) {
 
 .card {
     position: relative;
-    width: 150px;
     height: 250px;
     border-radius: 15px;
     margin: 5px;
@@ -877,7 +877,7 @@ tr:nth-child(even) {
     transform: translateX(-50%);
     z-index: 999;
     background-color: white;
-    width: 90vw;
+    width: 95vw;
     height: 80px;
     display: flex;
     justify-content: space-between !important;
