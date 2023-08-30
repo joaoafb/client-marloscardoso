@@ -134,6 +134,7 @@ function productCat(categoriaa) {
                             <div class="position-relative mb-3">
                                 <a class="d-block" href="detail.html#${produto.titulo}">
                                     <img class="img-fluid" src="${produto.img}" alt="${produto.titulo}">
+                                  
                                 </a>
                                
                             </div>

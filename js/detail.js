@@ -31,7 +31,7 @@ function loadpage() {
                     sessionStorage.setItem("largura", produto.largura)
 
                     const btn = document.createElement("button");
-                    btn.style.width = "100%";
+                    btn.style.width = "80%";
 
                     btn.className = "btn btn-dark btn-sm btn-block d-flex align-items-center justify-content-center  px-0";
                     btn.style.height = '50px'

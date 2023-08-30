@@ -552,6 +552,28 @@ tr:nth-child(even) {
 /* Estilos específicos para iPhone SE */
 
 @media screen and (max-width: 375px) {
+    .col-lg-6{
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+    .py-5{
+        margin: 0 auto;
+        width:100vw;
+    }
+    #form input{
+        width: 80% !important   ;
+    }
+    .card{
+        height: auto !important;
+        width: 80vw;
+        margin: 0 auto !important;
+        margin-top: 20px !important;
+    }
+   
+    .card-body{
+        margin: 0 auto !important;
+        width: 100% !important; 
+    }
     #nav span {
         text-align: left;
         width: 50%;
@@ -588,9 +610,7 @@ tr:nth-child(even) {
         text-align: center;
         border-top: 3px solid rgb(255, 230, 0);
     }
-    #btnComprar {
-        width: 100% !important;
-    }
+ 
     #product-img2 {
         margin: 0 auto !important;
     }
@@ -663,6 +683,10 @@ tr:nth-child(even) {
 }
 
 @media screen and (max-width: 767px) {
+    .list-unstyled.mb-0#btnComprar{
+        width: 100% !important;
+        margin: 0 auto;
+    }
     .flex-fill.p-3.flex.flex-row {
         padding: 20px !important;
         margin: 10px;
@@ -692,8 +716,10 @@ tr:nth-child(even) {
         border-top: 3px solid rgb(255, 230, 0);
     }
     #btnComprar {
-        width: 100% !important;
+        margin: 0 auto;
+        width: 92% !important;
         height: 70px;
+        margin-bottom: 10px;
     }
     #product-img2 {
         margin: 0 auto !important;
