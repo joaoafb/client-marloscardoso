@@ -34,6 +34,7 @@
 </head>
 
 <body>
+ 
     <nav class="fullscreen-menu" data-aos="flip-left">
         <div class="container">
             <div class="row">
@@ -83,7 +84,7 @@
                             <span>Nosso Instagram</span>
                         </div>
 
-                        <div onclick="location.href= ''" data-aos="fade-right" data-aos-delay="600" class="box icon-menu">
+                        <div onclick="location.href= './contact.html'" data-aos="fade-right" data-aos-delay="600" class="box icon-menu">
                             <i class="lni lni-whatsapp"></i>
                             <span>Nosso Whatsapp</span>
                         </div>
@@ -91,6 +92,11 @@
                         <div onclick="deslogar()" id="btnsair" data-aos="fade-right" data-aos-delay="700" class="box icon-menu">
                             <i class="lni lni-power-switch"></i>
                             <span>Deslogar</span>
+                        </div>
+
+                        <div onclick="location.href = 'login.html'" id="buttonLogin" data-aos="fade-right" data-aos-delay="800" class="box icon-menu">
+                            <i class="lni lni-user"></i>
+                            <span>Entrar</span>
                         </div>
 
 
@@ -102,7 +108,6 @@
             </div>
         </div>
     </nav>
-
     <div class="page-holder ">
         <!-- navbar-->
         <header class="header ">
@@ -113,7 +118,6 @@
                 </div>
 
                 <div>
-                    <button onclick="location.href = 'login.html'" id="buttonLogin" class="btn btn-dark zoom" style="height: 50px;"><i class="lni lni-user" style="padding-right: 10px;"></i>Entrar</button>
                     <button onclick="menushow()" id="btnMenu" class="btn btn-dark zoom" style="cursor: pointer; width: 50px; height: 50px;"><i class="lni lni-list"></i></button>
                 </div>
             </div>
