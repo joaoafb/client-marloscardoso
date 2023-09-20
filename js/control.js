@@ -2,7 +2,6 @@ const SELECTORS = {
     fullscreenMenu: ".fullscreen-menu",
     nav: "#nav",
     cart: "#cart",
-    buttonLogin: "#buttonLogin",
     buttonPedidos: "#buttonPedidos",
     btnSair: "#btnsair"
 };
@@ -47,8 +46,8 @@ function populateCart() {
 
 
 function deslogar() {
-    sessionStorage.removeItem("token");
-    localStorage.removeItem("token");
+    sessionStorage.clear()
+    localStorage.clear()
     console.log("Usuário deslogado.");
     location.href = '/index.html';
 }
@@ -56,17 +55,15 @@ function deslogar() {
 function updateUIBasedOnToken() {
     const token = localStorage.getItem("token");
 
-    const buttonLogin = document.querySelector(SELECTORS.buttonLogin);
+
     const buttonPedidos = document.querySelector(SELECTORS.buttonPedidos);
     const btnSair = document.querySelector(SELECTORS.btnSair);
 
     if (token && token.trim() !== '') {
-        buttonLogin.style.display = 'none';
-        buttonPedidos.style.display = 'block';
+
         btnSair.style.display = 'block';
     } else {
-        buttonLogin.style.display = 'block';
-        buttonPedidos.style.display = 'none';
+
         btnSair.style.display = 'none';
     }
 }

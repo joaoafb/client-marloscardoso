@@ -27,6 +27,7 @@ function products() {
     fetch('https://api.geniusleap.cloud/api/marloscardoso/listprodutos')
         .then(response => response.json())
         .then(data => {
+            data.reverse()
             const productListContainer = document.querySelector("#list-products");
             productListContainer.innerHTML = '';
 

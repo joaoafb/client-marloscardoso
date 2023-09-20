@@ -42,68 +42,68 @@ function loadpage() {
                     btn.innerText = "Adicionar ao carrinho R$" + Number(sessionStorage.getItem("valorproduto"))
                     btn.onclick = function() {
                         btn.innerHTML = 'Aguarde...'
-                      setTimeout(() => {
-                          // Suponha que você tenha uma array chamada "carrinho"
-                          var carrinho = produto;
+                        setTimeout(() => {
+                            // Suponha que você tenha uma array chamada "carrinho"
+                            var carrinho = produto;
 
-                          // Converte a array em uma string JSON
-                          var carrinhoString = JSON.stringify(carrinho);
-  
-                          // Salva a string no LocalStorage com a chave "carrinho"
-                          localStorage.setItem('carrinho', carrinhoString);
-  
-  
-                          const indice = Number(localStorage.getItem("indice"))
-                          localStorage.setItem("indice", indice + 1)
-                              // Verificar se o localStorage está disponível no navegador
-                          if (typeof localStorage !== 'undefined') {
-                              // Obter os dados salvos no localStorage (se houver)
-                              const savedData = JSON.parse(localStorage.getItem('Cart')) || [];
-  
-                              // Definir o objeto JSON a ser salvo
-                              const jsonData = {
-                                  image: produto.img,
-                                  title: produto.titulo,
-                                  price: produto.valor,
-                                  frete: localStorage.getItem("valorfrete"),
-                                  token: produto._id
-                              };
-  
-                              // Adicionar o novo objeto JSON ao array
-                              savedData.push(jsonData);
-  
-                              // Salvar o array atualizado no localStorage
-                              localStorage.setItem('Cart', JSON.stringify(savedData));
-  
-                              // Exibir o array atualizado no console
-                              console.log(savedData);
-                          } else {
-                              console.log('O localStorage não é suportado neste navegador.');
-                          }
-  
-  
-                          let timerInterval
-                          Swal.fire({
-                              icon: 'success',
-                              title: 'Adicionado No Carrinho Com Sucesso!',
-                              html: 'Redirecionando ao carrinho...',
-                              timer: 2000,
-                              timerProgressBar: true,
-                              didOpen: () => {
-                                  Swal.showLoading()
-                                  const b = Swal.getHtmlContainer().querySelector('b')
-  
-                              },
-                              willClose: () => {
-                                  clearInterval(timerInterval)
-                              }
-                          }).then((result) => {
-                              /* Read more about handling dismissals below */
-                              if (result.dismiss === Swal.DismissReason.timer) {
-                                  location.href = './cart.html'
-                              }
-                          })
-                      }, 1000);
+                            // Converte a array em uma string JSON
+                            var carrinhoString = JSON.stringify(carrinho);
+
+                            // Salva a string no LocalStorage com a chave "carrinho"
+                            localStorage.setItem('carrinho', carrinhoString);
+
+
+                            const indice = Number(localStorage.getItem("indice"))
+                            localStorage.setItem("indice", indice + 1)
+                                // Verificar se o localStorage está disponível no navegador
+                            if (typeof localStorage !== 'undefined') {
+                                // Obter os dados salvos no localStorage (se houver)
+                                const savedData = JSON.parse(localStorage.getItem('Cart')) || [];
+
+                                // Definir o objeto JSON a ser salvo
+                                const jsonData = {
+                                    image: produto.img,
+                                    title: produto.titulo,
+                                    price: produto.valor,
+                                    frete: localStorage.getItem("valorfrete"),
+                                    token: produto._id
+                                };
+
+                                // Adicionar o novo objeto JSON ao array
+                                savedData.push(jsonData);
+
+                                // Salvar o array atualizado no localStorage
+                                localStorage.setItem('Cart', JSON.stringify(savedData));
+
+                                // Exibir o array atualizado no console
+                                console.log(savedData);
+                            } else {
+                                console.log('O localStorage não é suportado neste navegador.');
+                            }
+
+
+                            let timerInterval
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Adicionado No Carrinho Com Sucesso!',
+                                html: 'Redirecionando ao carrinho...',
+                                timer: 2000,
+                                timerProgressBar: true,
+                                didOpen: () => {
+                                    Swal.showLoading()
+                                    const b = Swal.getHtmlContainer().querySelector('b')
+
+                                },
+                                willClose: () => {
+                                    clearInterval(timerInterval)
+                                }
+                            }).then((result) => {
+                                /* Read more about handling dismissals below */
+                                if (result.dismiss === Swal.DismissReason.timer) {
+                                    location.href = './cart.html'
+                                }
+                            })
+                        }, 1000);
                     };
 
                     const btnback = document.createElement("button")
@@ -130,31 +130,7 @@ function loadpage() {
                     document.querySelector("#product-addcart").appendChild(btnback);
                     document.querySelector("#product-addcart").appendChild(btnshare);
 
-                    document.querySelector("#product-img2").src = produto.img
 
-
-                    document.querySelector("#um").src = produto.img;
-
-
-                    document.querySelector("#dois").src = produto.img2;
-
-
-
-                    document.querySelector("#dois").src = produto.img3
-
-
-                    document.querySelector("#um").onclick = function() {
-                        document.querySelector("#product-img2").src = document.querySelector("#um").src
-
-                    }
-                    document.querySelector("#dois").onclick = function() {
-                        document.querySelector("#product-img2").src = document.querySelector("#dois").src
-
-                    }
-                    document.querySelector("#tres").onclick = function() {
-                        document.querySelector("#product-img2").src = document.querySelector("#tres").src
-
-                    }
 
                 }
             });
@@ -176,7 +152,7 @@ function loadpage() {
                     },
                     body: JSON.stringify({
                         // Mesmos argumentos que você tinha antes
-                        sCepOrigem: '48903680',
+                        sCepOrigem: '48916623',
                         sCepDestino: document.querySelector(".inputcep").value,
                         nVlPeso: sessionStorage.getItem("peso"),
                         nCdFormato: '1',
@@ -189,7 +165,13 @@ function loadpage() {
                 })
                 .then(response => response.json())
                 .then(data => {
-
+                    if (data.error = 'Erro ao calcular frete') {
+                        Swal.fire(
+                            'Triste',
+                            'O sistema de rastreio esta com problemas',
+                            'error'
+                        )
+                    }
                     data.forEach(item => {
                         const divResultadoFrete = $('<div class="resultfrete"></div>').on("click", function() {
                             localStorage.setItem("valorfrete", item.Valor)

@@ -26,10 +26,12 @@ document.getElementById("form-cadastro").addEventListener("submit", function(eve
             timer: 1500
         })
     } else {
+
         sendDataCadastro(dados);
     }
 });
 async function sendData(data) {
+    document.querySelector("section").style.filter = 'blur(2px)'
     try {
         const response = await fetch("https://api.geniusleap.cloud/api/marloscardoso/loginusuario", {
             method: "POST",
@@ -39,6 +41,7 @@ async function sendData(data) {
             body: JSON.stringify(data)
         });
         const result = await response.json();
+        document.querySelector("section").style.filter = 'blur(0px)'
         if (result.message == 'Logado.') {
             // Salvar o token no sessionStorage ou localStorage
             localStorage.setItem("token", result.token);
@@ -92,6 +95,7 @@ async function sendDataCadastro(dados) {
             },
             body: JSON.stringify(dados)
         });
+
         const result = await response.json();
         if (result.message == 'Cadastrado') {
 
