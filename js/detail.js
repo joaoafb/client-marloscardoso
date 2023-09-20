@@ -129,6 +129,7 @@ function loadpage() {
                     document.querySelector("#product-addcart").appendChild(btn);
                     document.querySelector("#product-addcart").appendChild(btnback);
                     document.querySelector("#product-addcart").appendChild(btnshare);
+                    document.querySelector("#product-img2").src = produto.img
 
 
 
