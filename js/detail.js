@@ -22,7 +22,7 @@ function loadpage() {
                     document.querySelector("#product-title").innerHTML = produto.titulo;
                     document.querySelector("#product-price").innerHTML = 'R$' + produto.valor;
                     document.querySelector("#product-description").innerHTML = produto.descricao;
-                    document.querySelector("#product-id").innerHTML = produto._id;
+
                     document.querySelector("#product-category").innerHTML = produto.categoria;
                     document.querySelector("#product-modelo").innerHTML = produto.modelo;
                     sessionStorage.setItem("peso", produto.peso)

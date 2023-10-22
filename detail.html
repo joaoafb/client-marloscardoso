@@ -174,11 +174,11 @@
 
 
                             <ul class="list-unstyled small d-inline-block">
-                                <li class="px-3 py-2 mb-1 "><strong class="text-uppercase">Código:</strong><span class="ms-2 text-muted" id="product-id"></span></li>
+
                                 <li class="px-3 py-2 mb-1  text-muted"><strong class="text-uppercase text-dark">Categoria:</strong>
                                     <a class="reset-anchor ms-2" id="product-category" href="#!"></a>
                                 </li>
-                                <li class="px-3 py-2 mb-1  text-muted"><strong class="text-uppercase text-dark">Modelo:</strong>
+                                <li class="px-3 py-2 mb-1  text-muted"><strong class="text-uppercase text-dark">Tamanhos:</strong>
                                     <a class="reset-anchor ms-2" href="#!" id="product-modelo"></a>
                                 </li>
                                 <br>
@@ -186,55 +186,6 @@
 
                             </ul>
 
-                            <ul class="list-unstyled small d-inline-block">
-                                <li class="px-3 py-2 mb-1 ">
-                                    <label for="">Calcular Frete:</label><br>
-                                    <form id="formFrete">
-                                        <input type="text" maxlength="8" minlength="8" required class="inputcep" placeholder="Digite aqui seu Cep">
-                                        <script>
-                                            // Função para formatar o CEP
-                                            function formatarCEP(cep) {
-                                                // Remove todos os caracteres não numéricos do CEP
-                                                cep = cep.replace(/\D/g, '');
-
-                                                // Verifica se o CEP possui o tamanho correto (8 dígitos)
-                                                if (cep.length === 8) {
-                                                    // Formata o CEP no padrão "XXXXX-XXX"
-                                                    cep = cep.replace(/^(\d{5})(\d{3})$/, '$1-$2');
-                                                }
-
-                                                return cep;
-                                            }
-
-                                            // Event listener para capturar mudanças no campo de input
-                                            const inputCEP = document.querySelector('.inputcep');
-                                            inputCEP.addEventListener('input', function() {
-                                                // Obtém o valor do campo de input
-                                                const valor = this.value;
-
-                                                // Formata o valor do CEP
-                                                const cepFormatado = formatarCEP(valor);
-
-                                                // Atualiza o valor do campo de input com o CEP formatado
-                                                this.value = cepFormatado;
-                                            });
-                                        </script>
-                                        <button class="btn btn-dark" type="submit">Calcular</button>
-                                    </form>
-                                    <p>Escolha o frete:</p>
-                                    <div class="resultfrete" onclick="document.querySelector('#optionFrete').innerHTML = '';  document.querySelector('#btnComprar').innerHTML = 'Adicionar ao carrinho R$' + parseFloat(sessionStorage.getItem('valorproduto'));ocalStorage.setItem('valorfrete', 0)"
-                                        style="padding-left: 0;width: 150px;margin-left: 0;">
-                                        <i class="lni lni-hand"></i>
-                                        <div class="flex column" style="flex-direction: column;display: flex;margin-left: 0 !important; ">
-                                            <label for="">Entrega à combinar</label>
-
-                                        </div>
-                                    </div>
-
-                                    <div id="optionFrete" class="flex row">
-                                    </div>
-                            </ul>
-                            <p id="datafrete" style="font-size: 10pt;color: gray;padding-left: 20px;">Frete: R$0 | Prazo: 0 dias</p>
                             <div style="width: 100%;" class="col-sm-3 pl-sm-0" id="product-addcart"></div>
                         </div>
                     </div>
@@ -251,14 +202,7 @@
     <footer class="bg-dark text-white">
         <div class="container py-4">
             <div class="row py-5">
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <h6 class="text-uppercase mb-3">Atendimento ao cliente</h6>
-                    <ul class="list-unstyled mb-0">
-                        <li><a class="footer-link" href="#!">Ajuda</a></li>
 
-                        <li><a class="footer-link" href="#!">Termos &amp; Condições</a></li>
-                    </ul>
-                </div>
 
                 <div class="col-md-4">
                     <h6 class="text-uppercase mb-3">Redes Sociais</h6>

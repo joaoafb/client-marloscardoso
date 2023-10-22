@@ -81,13 +81,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
                                     } catch (error) {
-                                        Swal.fire({
-
-                                            icon: 'success',
-                                            title: 'Estaremos entrando em contato por Whatsapp para finalizar sua compra.',
-                                            showConfirmButton: false,
-                                            timer: 1500
-                                        })
+                                        const link = 'https://wa.me/5574988274544?text= Pagamento Pedido: ' + pedidoId; // Substitua pela URL do link que deseja abrir
+                                        window.open(link, '_blank');
                                     }
                                 }
 

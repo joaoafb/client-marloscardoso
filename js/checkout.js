@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     .then(response => response.json())
                     .then(data => {
 
-                        document.getElementById("rua").textContent = data.address.road || "-";
+                        document.getElementById("address").value = data.address.road || "-";
                         document.getElementById("addressalt").value = data.address.suburb || "-";
                         document.getElementById("city").value = data.address.city || "-";
                         document.getElementById("state").value = data.address.state || "-";
@@ -115,112 +115,108 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.getElementById('firstName').value = localStorage.getItem("userstore")
 document.querySelector("#form").addEventListener("submit", function(event) {
-        event.preventDefault()
-        document.querySelector("#btnComprar").innerHTML = 'Aguarde...'
-        document.querySelector("#btnComprar").disabled = true
+    event.preventDefault()
+    document.querySelector("#btnComprar").innerHTML = 'Aguarde...'
+    document.querySelector("#btnComprar").disabled = true
 
-        const firstNameInput = document.getElementById('firstName').value
+    const firstNameInput = document.getElementById('firstName').value
 
-        const lastNameInput = document.getElementById('lastName').value
-        const emailInput = document.getElementById('email').value
-        const phoneInput = document.getElementById('phone').value
-        const addressInput = document.getElementById('address').value
-        const addressAltInput = document.getElementById('addressalt').value
-        const cityInput = document.getElementById('city').value
-        const stateInput = document.getElementById('state').value
-        const cpf = document.getElementById('cpf').value
-        const obs = document.getElementById('obs').value
-        localStorage.setItem("usercpf", cpf)
-        const pedido = JSON.parse(localStorage.getItem('Cart')) || [];
+    const lastNameInput = document.getElementById('lastName').value
+    const emailInput = document.getElementById('email').value
+    const phoneInput = document.getElementById('phone').value
+    const addressInput = document.getElementById('address').value
+    const addressAltInput = document.getElementById('addressalt').value
+    const cityInput = document.getElementById('city').value
+    const stateInput = document.getElementById('state').value
+    const cpf = document.getElementById('cpf').value
+    const obs = document.getElementById('obs').value
+    localStorage.setItem("usercpf", cpf)
+    const pedido = JSON.parse(localStorage.getItem('Cart')) || [];
 
 
-        const dataHoraAtual = moment();
-        const formatoDesejado = 'DD/MM/YYYY HH:mm';
-        const dataHoraFormatada = dataHoraAtual.format(formatoDesejado);
-        // Envia os dados para o servidor usando o fetch
-        function generateToken() {
-            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-            const tokenLength = 10;
-            let token = '';
+    const dataHoraAtual = moment();
+    const formatoDesejado = 'DD/MM/YYYY HH:mm';
+    const dataHoraFormatada = dataHoraAtual.format(formatoDesejado);
+    // Envia os dados para o servidor usando o fetch
+    function generateToken() {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        const tokenLength = 10;
+        let token = '';
 
-            for (let i = 0; i < tokenLength; i++) {
-                const randomIndex = Math.floor(Math.random() * characters.length);
-                token += characters[randomIndex];
+        for (let i = 0; i < tokenLength; i++) {
+            const randomIndex = Math.floor(Math.random() * characters.length);
+            token += characters[randomIndex];
+        }
+
+        return token;
+    }
+
+    // Exemplo de uso:
+    const tokenp = generateToken();
+
+
+    const Pedido = {
+        pedido,
+        firstNameInput,
+        lastNameInput,
+        emailInput,
+        phoneInput,
+        addressInput,
+        addressAltInput,
+        cityInput,
+        cpf,
+        stateInput,
+        obs,
+        meio: 'loja',
+        token: tokenp,
+        pricetotal: sessionStorage.getItem("pricetotal"),
+        status: 'Aguardando Pagamento',
+        data: dataHoraFormatada
+    }
+    fetch("https://api.geniusleap.cloud/api/marloscardoso/addpedidos", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(Pedido)
+        })
+        .then(response => response.json())
+        .then(data => {
+
+            if (data.message == 'Pedido Cadastrado') {
+
+                let timerInterval
+                Swal.fire({
+                    showButtonConfirm: false,
+                    icon: 'success',
+                    title: 'Pedido Realizado',
+                    html: 'Redirencionando para página de pagamento!',
+                    timer: 2000,
+                    timerProgressBar: true,
+
+                    willClose: () => {
+                        clearInterval(timerInterval)
+                    }
+                }).then((result) => {
+                    /* Read more about handling dismissals below */
+                    if (result.dismiss === Swal.DismissReason.timer) {
+                        localStorage.removeItem("Cart");
+
+                        location.href = './pedidos.html'
+
+
+
+                    }
+                })
             }
-
-            return token;
-        }
-
-        // Exemplo de uso:
-        const tokenp = generateToken();
-
-
-        const Pedido = {
-            pedido,
-            firstNameInput,
-            lastNameInput,
-            emailInput,
-            phoneInput,
-            addressInput,
-            addressAltInput,
-            cityInput,
-            cpf,
-            stateInput,
-            obs,
-            meio:'loja',
-            token: tokenp,
-            pricetotal: sessionStorage.getItem("pricetotal"),
-            status: 'Aguardando Pagamento',
-            data: dataHoraFormatada
-        }
-        fetch("https://api.geniusleap.cloud/api/marloscardoso/addpedidos", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(Pedido)
-            })
-            .then(response => response.json())
-            .then(data => {
-
-                if (data.message == 'Pedido Cadastrado') {
-
-                    let timerInterval
-                    Swal.fire({
-                        showButtonConfirm: false,
-                        icon: 'success',
-                        title: 'Pedido Realizado',
-                        html: 'Redirencionando para página de pagamento!',
-                        timer: 2000,
-                        timerProgressBar: true,
-
-                        willClose: () => {
-                            clearInterval(timerInterval)
-                        }
-                    }).then((result) => {
-                        /* Read more about handling dismissals below */
-                        if (result.dismiss === Swal.DismissReason.timer) {
-                            localStorage.removeItem("Cart");
-
-                            location.href = './pedidos.html'
+            // Aqui você pode realizar alguma ação após o servidor processar os dados
+        })
 
 
 
-                        }
-                    })
-                }
-                // Aqui você pode realizar alguma ação após o servidor processar os dados
-            })
-            .catch(error => {
-                console.error("Erro ao enviar dados:", error);
-            });
 
+})
 
-
-    })
-    .catch((error) => {
-        console.error("Error writing document: ", error);
-    });
 
 // Função para formatar o número enquanto o usuário digita
 function formatarNumeroInput(input, formato) {
